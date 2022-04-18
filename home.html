@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+   <!--<script src="home.js"></script> --> 
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/cancunLogo.svg" alt="Logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a> 
+            <a href="events.html">Events</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 id="header"></h2>
+            <hr class="underHeader">
+            <div class="gallery-content">
+                <div id="previous-area">
+                    <button id="previous-button">&#8249;</button> 
+                </div>
+                <img class="gallery-images" id="images" src="images/aboutMe.jpeg" alt="Any Picture"> <!--Will show up an error because it's empty, but it's in the javascript-->
+                <div id="next-area">
+                    <button id="next-button">&#8250;</button>
+                </div>
+            </div>
+            <p id="descriptionBody" style="text-align: center;"></p>
+        </section>
+        <div class="footer">
+            <a href="about.html">ABOUT</a>
+            <a href="menu.html">MENU</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="events.html">EVENTS</a>
+        </div>
+    </main>
+</body>
+</html>
+<script>
+const previousButton = document.getElementById('previous-button'); // The back button
+const nextButton = document.getElementById('next-button'); // The next button
+const headerDiv = document.getElementById('header'); // header title
+const images = document.getElementById('images');
+const descriptionDiv = document.getElementById('descriptionBody');
+
+const headerTitles = ["Welcome", "About Us", "Contact Us", "Upcoming Events"];
+const headerDescritpions = ["Hello, this is the home page. Be sure to check out our other pages.", 
+"In the about page, we dive into the history of Cancun Mexican Grill and what we serve in our menu.",
+"This is a selfie of me at the Alamo in San Antonio Texas.", 
+"Be sure to check out our upcoming events and what is happening here or on our Facebook page."];
+const imageSource = ["images/homePage.png", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/cinco.png", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+let s = 0;
+
+function advance(delta) {
+    s = (s + delta + headerTitles.length) % headerTitles.length;
+    descriptionDiv.innerHTML = headerDescritpions[s];
+    headerDiv.innerHTML = headerTitles[s];
+// headerDiv.setAttribute("href", linkTitles[s]);
+    images.src = imageSource[s];
+}
+previousButton.addEventListener('click', () => advance(-1));
+nextButton.addEventListener('click', () => advance(1));
+
+advance(0);
+</script>

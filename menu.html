@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
+    <script src="menu.js"></script>
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/cancunLogo.svg" alt="Logo">
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a> 
+            <a href="events.html">Events</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 id="header"></h2>
+            <hr class="underHeader">
+            <div class="gallery-content">
+                <div id="previous-area">
+                    <button id="previous-button">&#8249;</button> 
+                </div>
+                <img class="gallery-images" id="images" src="images/aboutMe.jpeg" alt="Any Picture"> <!--Will show up an error because it's empty, but it's in the javascript-->
+                <div id="next-area">
+                    <button id="next-button">&#8250;</button>
+                </div>
+            </div>
+            <p id="descriptionBody" style="text-align: center;"></p> 
+            <div class="quantity">
+            <input type=button value="-" onclick="button2()" />
+            <span id="output-area"></span>
+            <input type=button value="+" onclick="button1()" />
+            </div>
+           
+            
+        </section>
+
+        <div class="footer">
+            <a href="about.html">ABOUT</a>
+            <a href="menu.html">MENU</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="events.html">EVENTS</a>
+        </div>
+    </main>
+</body>
+</html>

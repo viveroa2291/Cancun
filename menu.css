@@ -1,0 +1,21 @@
+#next-area, #previous-area {
+    margin: auto;
+}
+#next-button, #previous-button{
+    color: white;
+    background: skyblue;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+.gallery-content{
+    display: flex;
+    flex-direction: row;
+}
+.gallery-images {
+    height: 500px;
+}
+.quantity {
+    text-align: center;
+}
