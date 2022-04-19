@@ -22,8 +22,15 @@
     </header>
     <main>
         <section>
-            <h2 id="header"></h2>
+            <h2 class="pageTitle" id="header">Menu</h2>
             <hr class="underHeader">
+            <a href="#tacos" onclick="tacos()">TACOS</a>
+            <a href="#burrito" onclick="burrito()">BURRITO</a>
+            <a href="#enchiladas" onclick="enchiladas()">ENCHILADAS</a>
+            <a href="#seafood" onclick="seafood()">SEAFOOD</a>
+            <a href="#fajitas" onclick="fajitas()">FAJITAS</a>
+            <a href="#beverages" onclick="beverages()">BEVERAGES</a>
+            <hr>
             <div class="gallery-content">
                 <div id="previous-area">
                     <button id="previous-button">&#8249;</button> 
@@ -33,14 +40,13 @@
                     <button id="next-button">&#8250;</button>
                 </div>
             </div>
-            <p id="descriptionBody" style="text-align: center;"></p> 
             <div class="quantity">
-            <input type=button value="-" onclick="button2()" />
-            <span id="output-area"></span>
-            <input type=button value="+" onclick="button1()" />
+                <input type=button value="-" onclick="button2()" />
+                <span id="output-area"></span>
+                <input type=button value="+" onclick="button1()" />
             </div>
-           
-            
+            <h3 class="foodType" id="food-type"></h3>
+            <p id="descriptionBody" style="text-align: center;"></p> 
         </section>
 
         <div class="footer">

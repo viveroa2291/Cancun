@@ -27,3 +27,9 @@ text-decoration: none;
 
 color: white;
 }
+.underHeader {
+    width: 25%;
+}
+.pageTitle {
+    text-align: center;
+}
