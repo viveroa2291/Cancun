@@ -16,7 +16,7 @@ a {
     margin-right: 2rem;
 }
 .footer {
-    position: fixed;
+    position: fixed; 
     bottom: 0;
     width: 100%;
     background-color: black;
@@ -34,5 +34,5 @@ color: white;
     text-align: center;
 }
 section{
-    margin-bottom: 25px;
+    margin-bottom: 1rem;
 }

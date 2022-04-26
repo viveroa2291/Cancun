@@ -24,18 +24,18 @@
         <section>
             <h2 class="pageTitle" id="header">Menu</h2>
             <hr class="underHeader">
-            <a href="#vegetarian" onclick="vegetarian()">VEGETARIAN</a>
-            <a href="#appetizers" onclick="appetizers()">APPETIZERS</a>
-            <a href="#nachos" onclick="nachos()">NACHOS</a>
-            <a href="#salads" onclick="salads()">SALADS</a>
-            <a href="#tacos" onclick="tacos()">TACOS</a>
-            <a href="#burrito" onclick="burrito()">BURRITO</a>
-            <a href="#enchiladas" onclick="enchiladas()">ENCHILADAS</a>
-            <a href="#quesadillas" onclick="quesadillas()">QUESADILLAS</a>
-            <a href="#seafood" onclick="seafood()">SEAFOOD</a>
-            <a href="#fajitas" onclick="fajitas()">FAJITAS</a>
-            <a href="#desserts" onclick="desserts()">DESSERTS</a>
-            <a href="#beverages" onclick="beverages()">BEVERAGES</a>
+            <a class="menu-item" href="#vegetarian" onclick="vegetarian()">VEGETARIAN</a>
+            <a class="menu-item" href="#appetizers" onclick="appetizers()">APPETIZERS</a>
+            <a class="menu-item" href="#nachos" onclick="nachos()">NACHOS</a>
+            <a class="menu-item" href="#salads" onclick="salads()">SALADS</a>
+            <a class="menu-item" href="#tacos" onclick="tacos()">TACOS</a>
+            <a class="menu-item" href="#burrito" onclick="burrito()">BURRITO</a>
+            <a class="menu-item" href="#enchiladas" onclick="enchiladas()">ENCHILADAS</a>
+            <a class="menu-item" href="#quesadillas" onclick="quesadillas()">QUESADILLAS</a>
+            <a class="menu-item" href="#seafood" onclick="seafood()">SEAFOOD</a>
+            <a class="menu-item" href="#fajitas" onclick="fajitas()">FAJITAS</a>
+            <a class="menu-item" href="#desserts" onclick="desserts()">DESSERTS</a>
+            <a class="menu-item" href="#beverages" onclick="beverages()">BEVERAGES</a>
             <hr>
             <div class="gallery-content">
                 <div id="previous-area">
@@ -47,13 +47,14 @@
                 </div>
             </div>
             <h3 class="foodType" id="food-type"></h3>
+            <p class="disclaimer" id="disclaimer"></p>
             <p class="price" id="price"></p>
             <div class="quantity">
                 <input id="minus-button" type=button value="-"/>
                 <span id="output-area"></span>
                 <input id="plus-button" type=button value="+"/>
             </div>
-            <p id="descriptionBody" style="text-align: center;"></p> 
+            <p class="description" id="descriptionBody" style="text-align: center;"></p> 
         </section>
 
         <div class="footer">
