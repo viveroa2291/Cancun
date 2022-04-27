@@ -78,10 +78,10 @@ function appetizers(){
     const prices = [9.99, 7.99, 6.99, 8.99, 7.99, 13.99,12.99];
     const headerDescritpions = ["Chorize (Mexican sausages) with cheese sauce. <br> Served with flour tortillas.", "Served with fries.", " ", "Served with fries", 
     "Refried bean dip with cream cheese.", 
-    "A combo of cheese sticks, chicekn tenders, chicken tenders, chicken quesadilla & queso fundido. <br> Served with lettuce and guacamole.",
+    "A combo of cheese sticks, chicken tenders, chicken quesadilla & queso fundido. <br> Served with lettuce and guacamole.",
     "Fresh shrimp chopped and marinated with lime, tomato, red onions, cilantro, and diced jalapenos. <br> Served with advocado slices, chips and crackers."];
     const dis = [""];
-    const imageSource = ["appetizers/quesoFundido.jpeg", "appetizers/mozzarellaSticks.jpeg", "appetizers/cheeseFries.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const imageSource = ["appetizers/quesoFundido.jpeg", "appetizers/mozzarellaSticks.jpeg", "appetizers/cheeseFries.jpeg", "appetizers/chickenTenders.jpeg", "appetizers/cancunSampler.png", "appetizers/cevicheDeCamaron.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -138,8 +138,8 @@ function nachos() {
     const headerDescritpions = ["Cheese nachos with beef, chicken, and beans. <br> Topped with lettuce and shredded cheese.",
     "Your choice of Grilled Chicken or Steak with sauteed onions and bell peppers.", " ", 
     "Your choice of ground Beef or Chicken, topped with lettuce.", " "];
-    const dis = ["All nachos topped with shredded cheese and cheese sauce. <hr width='25%'>"];
-    const imageSource = ["nachos/nachosDeMesa.png", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const dis = ["* All nachos topped with shredded cheese and cheese sauce. * <hr width='25%'>"];
+    const imageSource = ["nachos/nachosDeMesa.png", "nachos/nachoFajitas.jpeg", "nachos/nachosWithCheese.jpeg", "nachos/nachosSupreme.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -199,7 +199,7 @@ function salads() {
     "Breaded or grilled Mahi-mahi fresh romaine lettuce, tomato, red onions, croutons, cheese and diced advocado. <br> Served with our home made white sauce dressing.",
     "A crisp flour tortilla a shell filled with your choice of Grilled Chicken or Steak, onions, bell peppers, and tomato. <br> Topped with cheese sauce, lettuce and tomato."];
     const dis = ["* Tomatoes, sour cream, and pico de gallo are complementary upon request. * <hr width='25%'>"];
-   const imageSource = ["salads/tacoSalad.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+   const imageSource = ["salads/tacoSalad.jpeg", "salads/grilledShrimpSalad.jpeg", "salads/chickenSalad.png", "salads/mahiSalad.jpeg", "salads/tacoSaladFajita.jpeg", "images/bucs.jpeg"];
    let s = 0;
 
    function advance(delta) {
