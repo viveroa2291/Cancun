@@ -1,22 +1,3 @@
-
-/*
-var x = 0;
-
-document.getElementById('output-area').innerHTML = x;
-
-function button1() {
-   document.getElementById('output-area').innerHTML = ++x;
-}
-
-function button2() {
-if(x < 2)
-  {
-      x = 2;
-  }
-  document.getElementById('output-area').innerHTML = --x;
-  
-}
-*/
 function vegetarian() {
    
     var x = 1;
@@ -31,6 +12,7 @@ function vegetarian() {
     const price = document.getElementById('price');
     const plusButton = document.getElementById('plus-button');
     const minusButton = document.getElementById('minus-button');
+    const disclaimer = document.getElementById('disclaimer');
 
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
@@ -40,8 +22,8 @@ function vegetarian() {
     const headerDescritpions = ["Grilled bell peppers, onions, tomato, potatoes, carrots, zucchini, yellow squash and mushrooms. <br> Served with rice, beans and lettuce.",
      "Two bean burritos topped with cheese sauce. <br> Served with rice and lettuce.", 
      "A large flour tortilla filled with grilled bell peppers, onions, potatoes, zucchini, carrots, yellow squash, tomatoes and mushrooms. <br> Topped with cheese sauce and served with rice and lettuce."];
-
-    const imageSource = ["images/vegetarianFajitas.png", "images/burritoDeFrijole.png", "images/burritoVegetariano.jpeg"];
+    const dis = ["* Tomatoes, sour cream and pico de gallo are complementary upon request. <hr width='25%'>"];
+    const imageSource = ["vegetarian/vegetarianFajitas.png", "vegetarian/burritoDeFrijole.png", "vegetarian/burritoVegetariano.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -49,6 +31,7 @@ function vegetarian() {
         descriptionDiv.innerHTML = headerDescritpions[s];
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
+        disclaimer.innerHTML = dis[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -86,6 +69,7 @@ function appetizers(){
     const price = document.getElementById('price');
     const plusButton = document.getElementById('plus-button');
     const minusButton = document.getElementById('minus-button');
+    const disclaimer = document.getElementById('disclaimer');
 
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
@@ -96,8 +80,8 @@ function appetizers(){
     "Refried bean dip with cream cheese.", 
     "A combo of cheese sticks, chicekn tenders, chicken tenders, chicken quesadilla & queso fundido. <br> Served with lettuce and guacamole.",
     "Fresh shrimp chopped and marinated with lime, tomato, red onions, cilantro, and diced jalapenos. <br> Served with advocado slices, chips and crackers."];
-
-    const imageSource = ["images/quesoFundido.jpeg", "images/mozzarellaSticks.jpeg", "images/cheeseFries.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const dis = [""];
+    const imageSource = ["appetizers/quesoFundido.jpeg", "appetizers/mozzarellaSticks.jpeg", "appetizers/cheeseFries.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -105,6 +89,7 @@ function appetizers(){
         descriptionDiv.innerHTML = headerDescritpions[s];
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
+        disclaimer.innerHTML = dis[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -143,6 +128,7 @@ function nachos() {
     const price = document.getElementById('price');
     const plusButton = document.getElementById('plus-button');
     const minusButton = document.getElementById('minus-button');
+    const disclaimer = document.getElementById('disclaimer');
 
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
@@ -152,8 +138,8 @@ function nachos() {
     const headerDescritpions = ["Cheese nachos with beef, chicken, and beans. <br> Topped with lettuce and shredded cheese.",
     "Your choice of Grilled Chicken or Steak with sauteed onions and bell peppers.", " ", 
     "Your choice of ground Beef or Chicken, topped with lettuce.", " "];
-
-    const imageSource = ["images/nachosDeMesa.png", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const dis = ["All nachos topped with shredded cheese and cheese sauce. <hr width='25%'>"];
+    const imageSource = ["nachos/nachosDeMesa.png", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -161,6 +147,7 @@ function nachos() {
         descriptionDiv.innerHTML = headerDescritpions[s];
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
+        disclaimer.innerHTML = dis[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -199,6 +186,7 @@ function salads() {
    const price = document.getElementById('price');
    const plusButton = document.getElementById('plus-button');
    const minusButton = document.getElementById('minus-button');
+   const disclaimer = document.getElementById('disclaimer');
 
    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
@@ -210,8 +198,8 @@ function salads() {
     "Seasoned juicy grilled Chicken breast, fresh Romaine lettuce, tomato, red onions, croutons, cheese and diced advocado. <br> Served with our special white sauce dressing on the side.",
     "Breaded or grilled Mahi-mahi fresh romaine lettuce, tomato, red onions, croutons, cheese and diced advocado. <br> Served with our home made white sauce dressing.",
     "A crisp flour tortilla a shell filled with your choice of Grilled Chicken or Steak, onions, bell peppers, and tomato. <br> Topped with cheese sauce, lettuce and tomato."];
-
-   const imageSource = ["images/tacoSalad.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const dis = ["* Tomatoes, sour cream, and pico de gallo are complementary upon request. * <hr width='25%'>"];
+   const imageSource = ["salads/tacoSalad.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
    let s = 0;
 
    function advance(delta) {
@@ -219,6 +207,7 @@ function salads() {
        descriptionDiv.innerHTML = headerDescritpions[s];
        foodType.innerHTML = headerTitles[s];
        images.src = imageSource[s];
+       disclaimer.innerHTML = dis[0];
        minusButton.addEventListener('click', () => { 
            if(x < 1) // Number cannot go under 0
            { 
@@ -272,7 +261,7 @@ function tacos() {
     "Two grilled shrimp tacos topped with cheese & lettuce. <br> Served with rice, beans, and salsa.",
     "Three Mahi-Mahi tacos, breaded or grilled, topped with cabbage, red onions, avocado and our house made Salsa Rosada. <br> Try with chipotle aioli or white sauce."];
     const dis = ["Your choice of corn or flour tortillas. With Red salsa or Green mild salsa. Pico de gallo on request. <br> EXTRA Taco $4.50. <hr width='25%'>"];
-    const imageSource = ["images/carneAsadaTacos.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const imageSource = ["tacos/carneAsadaTacos.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -385,7 +374,7 @@ function seafood() {
     "Tilapia seasoned and fried whole. <br> Served with rice, lettuce, and fresh avocado.",
     "Two 4oz Mahi-mahi steaks, seasoned and grilled with mushrooms, lemon juice and white wine. <br> Served on a bed of rice and smothered with cheese sauce. <br> Your choice offlour or corn tortillas."];
 
-    const imageSource = ["images/seafoodVallarta.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const imageSource = ["seafood/seafoodVallarta.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
     let s = 0;
 
     function advance(delta) {

@@ -31,16 +31,20 @@
 }
 .menu-item {
     text-decoration: none;
-    text-align: center;
     color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .menu-item:hover {
     color: gray;
 }
-.disclaimer {
+.menuItems {
     text-align: center;
 }
+.disclaimer {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
 .description {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }

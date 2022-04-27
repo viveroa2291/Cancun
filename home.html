@@ -35,39 +35,42 @@
             </div>
             <p id="descriptionBody" style="text-align: center;"></p>
         </section>
-        <div class="footer">
-            <a href="about.html">ABOUT</a>
-            <a href="menu.html">MENU</a>
-            <a href="contact.html">CONTACT</a>
-            <a href="events.html">EVENTS</a>
-        </div>
     </main>
+    <footer>
+        <a href="about.html">ABOUT</a>
+        <a href="menu.html">MENU</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="events.html">EVENTS</a>
+        <br> <br>
+        <span>Copyright <script>document.write(new Date().getFullYear());</script></span>
+    </footer>
 </body>
 </html>
+
 <script>
-const previousButton = document.getElementById('previous-button'); // The back button
-const nextButton = document.getElementById('next-button'); // The next button
-const headerDiv = document.getElementById('header'); // header title
-const images = document.getElementById('images');
-const descriptionDiv = document.getElementById('descriptionBody');
+    const previousButton = document.getElementById('previous-button'); // The back button
+    const nextButton = document.getElementById('next-button'); // The next button
+    const headerDiv = document.getElementById('header'); // header title
+    const images = document.getElementById('images');
+    const descriptionDiv = document.getElementById('descriptionBody');
 
-const headerTitles = ["Welcome", "About Us", "Contact Us", "Upcoming Events"];
-const headerDescritpions = ["Hello, this is the home page. Be sure to check out our other pages.", 
-"In the about page, we dive into the history of Cancun Mexican Grill and what we serve in our menu.",
-"This is a selfie of me at the Alamo in San Antonio Texas.", 
-"Be sure to check out our upcoming events and what is happening here or on our Facebook page."];
-const imageSource = ["images/homePage.png", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/cinco.png", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
-let s = 0;
+    const headerTitles = ["Welcome", "About Us", "Contact Us", "Upcoming Events"];
+    const headerDescritpions = ["Hello, this is the home page. Be sure to check out our other pages.", 
+    "In the about page, we dive into the history of Cancun Mexican Grill and what we serve in our menu.",
+    "This is a selfie of me at the Alamo in San Antonio Texas.", 
+    "Be sure to check out our upcoming events and what is happening here or on our Facebook page."];
+    const imageSource = ["images/homePage.png", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/cinco.png", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    let s = 0;
 
-function advance(delta) {
-    s = (s + delta + headerTitles.length) % headerTitles.length;
-    descriptionDiv.innerHTML = headerDescritpions[s];
-    headerDiv.innerHTML = headerTitles[s];
-// headerDiv.setAttribute("href", linkTitles[s]);
-    images.src = imageSource[s];
-}
-previousButton.addEventListener('click', () => advance(-1));
-nextButton.addEventListener('click', () => advance(1));
+    function advance(delta) {
+        s = (s + delta + headerTitles.length) % headerTitles.length;
+        descriptionDiv.innerHTML = headerDescritpions[s];
+        headerDiv.innerHTML = headerTitles[s];
+    // headerDiv.setAttribute("href", linkTitles[s]);
+        images.src = imageSource[s];
+    }
+    previousButton.addEventListener('click', () => advance(-1));
+    nextButton.addEventListener('click', () => advance(1));
 
-advance(0);
+    advance(0);
 </script>
