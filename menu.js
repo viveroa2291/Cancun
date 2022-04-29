@@ -296,15 +296,35 @@ function tacos() {
     advance(0); 
 }
 function burrito() {
+    var x = 1;
+
+    document.getElementById('output-area').innerHTML = x;
+    
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
     const images = document.getElementById('images');
     const descriptionDiv = document.getElementById('descriptionBody');
+    const price = document.getElementById('price');
+    const plusButton = document.getElementById('plus-button');
+    const minusButton = document.getElementById('minus-button');
+    const disclaimer = document.getElementById('disclaimer');
 
-    const headerTitles = ["Steak Burritos", "Chicken Burritos", "Contact Us", "Upcoming Events"];
-    const headerDescritpions = ["This is an image of me at Universal in Orlando Florida", "This is a picture of me in Acapulco Mexico.", "This is a selfie of me at the Alamo in San Antonio Texas.", "This is an image of me in the Arches National Park in Utah.", "This is an image of me ice skating with friends in Maggie Daley Park in Chicago.", "This is a picture of me at a Milwaukee Bucs game in Milwaukee."];
-    const imageSource = ["images/universal.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
+    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
+
+    const headerTitles = ["Burrito Norteno", "Don Burrito", "Burrito De Carnitas", "Burrito Deshebrada", "Buritos Mexicanos", "Burrito Cancun", "Burrito De La Mesa", "Burrito Bowl"];
+    const prices = [12.99, 12.99, 12.99, 12.99, 14.99, 13.99, 11.50, 12.99];
+    const headerDescritpions = ["Large flour tortilla filled with cooked pork, cilantro, onions, rice, and beans. <br> Topped with burrito sauce and served with lettuce.",
+     "Large flour tortilla fillled with your choice of grilled chicken or steak, cheese sauce, rice and beans. <br> Covered with burrito sauce and cheese sauce. <br> Served with lettuce.", 
+     "Large flour tortilla filled with cooked pork fajitas, cheese, rice, and beans. <br> Topped with burrito sauce.",
+    "Large flour tortilla filled with seasoned shredded beef, rice, beans, cheese sauce, and lettuce. <br>Topped with burrito sauce.",
+    "Two burritos filled with your choice of grilled chicken, fajitas or grilled steak fajitas, covered with cheese. <br> Topped with lettuce.",
+    "Shrimp, onions, potatoes, zucchini, carrots, yellow squash, tomato, mushrooms, cheese, <br> and creamy chipotle sauce grilled to perfection and wrapped in a large flour tortillas. <br> Topped with burrito sauce.", 
+    "Burrito filled with ground beef or cooked chicken, covered with burrito sauce and topped with lettuce and tomato. <br> Served with rice and beans.",
+    "Your choice of meat serving on a bowl: <div style='display: flex; flex-direction: row; justify-content: center; margin-left: 750px; margin-right: 750px;'> <div> <ul> <li>Fajita Steak</li><li>Fajita Chicken</li><li>Fajita cooked Pork</li><li>Grilled Steak</li><li>Grilled Chicken</li><li>Shredded Beef</li></ul> </div> <hr style='transform: rotate(0);'> <div> <b>Toppings:</b> <ul> <li>Rice</li> <li>Beans</li> <li> Lettuce </li> <li> Cheese </li> <li> Tomato </li> <li> Sour Cream </li> <li> Cheese Sauce </li> <li> Pico De Gallo </li> <li>Mild Sauce</li> <li>Hot Sauce </li></ul> </div> </div>"];
+    const dis = ["* Your choice of burrito sauce or tomatillo green mild sauce. * <hr width='25%'>"];
+    const imageSource = ["vegetarian/vegetarianFajitas.png", "vegetarian/burritoDeFrijole.png", "vegetarian/burritoVegetariano.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -312,11 +332,30 @@ function burrito() {
         descriptionDiv.innerHTML = headerDescritpions[s];
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
+        disclaimer.innerHTML = dis[0];
+        minusButton.addEventListener('click', () => { 
+            if(x < 1) // Number cannot go under 0
+            { 
+                x = 1;
+                price.innerHTML = "$ " + prices[s] * x; 
+                document.getElementById('output-area').innerHTML = x;
+            }
+            else {
+                price.innerHTML = "$ " + prices[s] * x;
+            }     
+        })
+        plusButton.addEventListener('click', () => price.innerHTML = "$ " + prices[s] * x); // If clicked, it will update the price 
+        price.innerHTML = "$ " + prices[s] * x; 
     }
-    previousButton.addEventListener('click', () => advance(-1));
-    nextButton.addEventListener('click', () => advance(1));
+    previousButton.addEventListener('click', () => x = 1); 
+    nextButton.addEventListener('click', () => x = 1);
 
-    advance(0); 
+    previousButton.addEventListener('click', () => advance(-1));
+    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+    nextButton.addEventListener('click', () => advance(1));
+    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+
+    advance(0);  
 }
 function enchiladas() {
     const previousButton = document.getElementById('previous-button'); // The back button
