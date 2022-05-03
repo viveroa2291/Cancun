@@ -23,3 +23,8 @@
 .gallery-images {
     height: 500px;
 }
+@media (max-width: 1000px) {
+    .gallery-images {
+        height: 150px;
+    }
+}

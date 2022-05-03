@@ -25,8 +25,8 @@ footer {
     color: white;
 }
 footer>a{
-text-decoration: none;
-color: white;
+    text-decoration: none;
+    color: white;
 }
 footer>a:hover {
     color: gray;
@@ -39,4 +39,49 @@ footer>a:hover {
 }
 section{
     margin-bottom: 1rem;
+}
+.hamburger {
+    display: none;
+}
+header nav {
+    position: static;
+}
+@media (max-width: 1000px) {
+    .hamburger {
+        display: block;
+        width: 40px;
+        padding: .5rem;
+    }
+    .hamburger hr {
+        margin: .75rem 0;
+        border: 2px solid black;
+    }
+    .top-nav {
+        display: flex;
+        flex-direction: column; 
+    }
+    /*
+    .hamburger:hover, hr:hover {
+        color: red;
+        border: 2px solid red;
+    }
+    */
+    header nav {
+        background-color: green;
+        position: fixed;
+        width: 100%;
+        top: 4.75rem;
+        right: 100%;
+        
+        transition-property: right;
+        transition-duration: .5s;
+        transition-timing-function: ease-in-out;
+    }
+    header nav a {
+        text-align: center;
+        color: white;
+    }
+    header nav.show {
+        right: 0;
+    }
 }

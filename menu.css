@@ -48,3 +48,8 @@
 .description {
     margin-bottom: 2rem;
 }
+@media (max-width: 1000px) {
+    .gallery-images {
+        height: 150px;
+    }
+}
