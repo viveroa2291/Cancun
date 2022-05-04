@@ -52,4 +52,12 @@
     .gallery-images {
         height: 150px;
     }
+    #next-button, #previous-button{
+        color: white;
+        background: red;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+    }
 }

@@ -26,6 +26,9 @@
         </nav>
     </header>
     <main>
+        <section class="large-template">
+            <img class="large-template-logo" src="images/cancunLogo.svg" alt="Logo">
+        </section>
         <section>
             <h2 class="pageTitle" id="header"></h2>
             <hr class="underHeader">
@@ -38,7 +41,7 @@
                     <button id="next-button">&#8250;</button>
                 </div>
             </div>
-            <p id="descriptionBody" style="text-align: center;"></p>
+            <p id="descriptionBody" class="descriptionBody"></p>
         </section>
     </main>
     <footer>
@@ -52,7 +55,8 @@
 </body>
 </html>
 
-<script>      
+<script>
+
     function myRotate(x) {    
         x.classList.toggle("change");
     }   
@@ -69,19 +73,19 @@
     const images = document.getElementById('images');
     const descriptionDiv = document.getElementById('descriptionBody');
 
-    const headerTitles = ["Welcome", "About Us", "Contact Us", "Upcoming Events"];
-    const headerDescritpions = ["Hello, this is the home page. Be sure to check out our other pages.", 
-    "In the about page, we dive into the history of Cancun Mexican Grill and what we serve in our menu.",
-    "This is a selfie of me at the Alamo in San Antonio Texas.", 
+    const headerTitles = ["Welcome", "Our Menu", "About Us", "Contact Us", "Upcoming Events"];
+    const headerDescritpions = ["Welcome to <b> Cancun Mexican Grill </b> website. <br> This is the home page and will serve as a guide for the other pages to make the navigation simpler. <br> The top right has the links to the other pages from our restaruant along with the footer of each page. <br> The <b class='red-arrows'> Red Arrows </b> of this page will navigate you through the other pages with a description. Be sure to check out our other pages. <br> Check out our <a class='javascriptMenu' href='menu.html'>Menu</a> section as we provide a large menu selection of the food that we serve at our restaruants. <br> We also host various <a class='javascriptMenu' href='events.html'>Events</a> at our restaruants that you don't want to miss out on our deals. <br> To read about our restaurant and learn about it, check out our <a class='javascriptMenu' href='about.html'>About</a> section. <br> For any questions or concerns, you can redirect yourself onto our <a class='javascriptMenu' href='contact.html'>Contact</a> section.", 
+    "We offer a large selection <a class='javascriptMenu' href='menu.html'>Menu</a> with prices and details about the food we serve. <br> You can play around with the <b class='quantity'>Quantity</b> and <b class='price'>Prices</b> of the item to see the total costs. <br> Keep in mind that <b> * Taxes * </b> are not factored into this website. <br> Our Menu consists of: <div class='menu-table'> <ul class='menu-list'><li> Vegetarian Food</li> <li> Appetizers</li> <li> Nachos </li> <li> Salads </li> <li> Tacos </li> <li> Burritos </li> <li> Enchiladas </li> <li> Quesadillas </li> <li> Seafood </li> <li> Fajitas </li> <li> Desserts </li> <li> Beverages </li> </div> <br> Be Sure to check out our menu options!",
+    "In the about page, we dive into the history of Cancun Mexican Grill and what we serve in our menu. ",
+    "Our contact page provides the locations of our restaruants along with ways to contact us.", 
     "Be sure to check out our upcoming events and what is happening here or on our Facebook page."];
-    const imageSource = ["images/homePage.png", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/cinco.png", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const imageSource = ["images/homePage.png", "images/menuSelection.jpeg", "images/restaurant.jpeg", "images/at-your-service.jpeg", "images/cinco.png"];
     let s = 0;
 
     function advance(delta) {
         s = (s + delta + headerTitles.length) % headerTitles.length;
         descriptionDiv.innerHTML = headerDescritpions[s];
         headerDiv.innerHTML = headerTitles[s];
-    // headerDiv.setAttribute("href", linkTitles[s]);
         images.src = imageSource[s];
     }
     previousButton.addEventListener('click', () => advance(-1));

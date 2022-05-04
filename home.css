@@ -23,8 +23,52 @@
 .gallery-images {
     height: 500px;
 }
+.javascriptMenu {
+    text-decoration: none;
+    font-size: 16px;
+    color: blue;
+    margin: 1px;
+}
+.javascriptMenu:hover{
+    color: black;
+}
+.large-template {
+    background-image: url('images/platters.jpeg');
+}
+.descriptionBody {
+    text-align: center;
+    line-height: 2;
+}
+.red-arrows {
+    color: red;
+}
+.quantity {
+    color: red;
+}
+.price {
+    color: green;
+}
+
+.menu-table {
+    text-align: center;
+}
+
+.menu-table .menu-list {
+    display: inline-block;
+}
 @media (max-width: 1000px) {
     .gallery-images {
-        height: 150px;
+        height: 200px;
+    }
+    #next-button, #previous-button{
+        color: white;
+        background: red;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+    }
+    .descriptionBody {
+        line-height: 1.5;
     }
 }
