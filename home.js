@@ -1,9 +1,13 @@
-function toggleNav() {
-    let elements = document.getElementsByClassName('top-nav');
-    for(let i = 0; i < elements.length; i++) {
-        elements[i].classList.toggle('show');
+
+    function myRotate(x) {    
+        x.classList.toggle("change");
+    }   
+    function toggleNav() {    
+        let elements = document.getElementsByClassName('top-nav');
+        for(let i = 0; i < elements.length; i++) {
+            elements[i].classList.toggle('show');
+        }
     }
-}
 
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button

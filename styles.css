@@ -3,7 +3,7 @@ nav>a{
     color: black;
 }
 nav>a:hover {
-    color: gray;
+    color: red;
 }
 .logo {
     margin: -90px -130px;
@@ -53,12 +53,26 @@ header nav {
         padding: .5rem;
     }
     .hamburger hr {
-        margin: .75rem 0;
+        margin: .45rem 0;
         border: 2px solid black;
     }
     .top-nav {
         display: flex;
         flex-direction: column; 
+    }
+    .hr1, .hr2, .hr3 {
+        transition: 1s;
+    }
+    .change .hr1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+    .change .hr2 {
+        opacity: 0;
+    } 
+    .change .hr3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
     }
     /*
     .hamburger:hover, hr:hover {
@@ -68,11 +82,11 @@ header nav {
     */
     header nav {
         background-color: green;
-        position: fixed;
+        position: fixed; 
         width: 100%;
         top: 4.75rem;
         right: 100%;
-        
+    
         transition-property: right;
         transition-duration: .5s;
         transition-timing-function: ease-in-out;

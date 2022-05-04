@@ -7,15 +7,15 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="home.css">
-   <!-- <script src="home.js"></script> -->
+    <!-- <script src="home.js"></script> -->
 </head>
 <body>     
     <header> 
         <img class="logo" src="images/cancunLogo.svg" alt="Logo">
-        <div class="hamburger" onclick="toggleNav()">
-            <hr>
-            <hr>
-            <hr>
+        <div class="hamburger" onclick="toggleNav(); myRotate(this);">
+            <hr class="hr1">
+            <hr class="hr2">
+            <hr class="hr3">
         </div>
         <nav class="top-nav">
             <a href="home.html">Home</a>
@@ -52,7 +52,10 @@
 </body>
 </html>
 
-<script>        
+<script>      
+    function myRotate(x) {    
+        x.classList.toggle("change");
+    }   
     function toggleNav() {    
         let elements = document.getElementsByClassName('top-nav');
         for(let i = 0; i < elements.length; i++) {
