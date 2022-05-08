@@ -498,6 +498,7 @@ function seafood() {
     const price = document.getElementById('price');
     const plusButton = document.getElementById('plus-button');
     const minusButton = document.getElementById('minus-button');
+    const disclaimer = document.getElementById('disclaimer');
 
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
@@ -517,8 +518,8 @@ function seafood() {
     "A roasted poblano pepper stuffed with cheese and grilled shrimp. <br> Topped with mild red sauce and cheese sauce. <br> Served with rice.",
     "Tilapia seasoned and fried whole. <br> Served with rice, lettuce, and fresh avocado.",
     "Two 4oz Mahi-mahi steaks, seasoned and grilled with mushrooms, lemon juice and white wine. <br> Served on a bed of rice and smothered with cheese sauce. <br> Your choice offlour or corn tortillas."];
-
-    const imageSource = ["seafood/seafoodVallarta.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    const dis = [""];
+    const imageSource = ["seafood/seafoodVallarta.jpeg", "seafood/ceviche-de-camarones.jpeg", "seafood/Mazatlan.jpeg", "seafood/enchiladas-acapulco.jpeg", "seafood/coctel-de-camaron.jpeg", "seafood/quesadilla-de-camaron.jpeg", "seafood/enchiladas-cancun.jpeg", "seafood/camarones-la-diabla.jpeg", "seafood/los-cabos-shrimp.jpeg", "seafood/camarones-al-chipotle.jpeg", "seafood/shrimp-relleno.jpeg", "seafood/mojarra-frita.jpeg", "seafood/cozumel.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -526,6 +527,7 @@ function seafood() {
         descriptionDiv.innerHTML = headerDescritpions[s];
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
+        disclaimer.innerHTML = dis[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -551,16 +553,38 @@ function seafood() {
 
     advance(0);  
 }
+/**
+ * Note to self
+ * If there's time, we'll add a feature to add an additional side for $6 . 
+ */
 function fajitas() {
+    var x = 1;
+
+    document.getElementById('output-area').innerHTML = x;
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
     const images = document.getElementById('images');
     const descriptionDiv = document.getElementById('descriptionBody');
+    const price = document.getElementById('price');
+    const plusButton = document.getElementById('plus-button');
+    const minusButton = document.getElementById('minus-button');
+    const disclaimer = document.getElementById('disclaimer');
 
-    const headerTitles = ["Steak Burritos", "Chicken Burritos", "Contact Us", "Upcoming Events"];
-    const headerDescritpions = ["This is an image of me at Universal in Orlando Florida", "This is a picture of me in Acapulco Mexico.", "This is a selfie of me at the Alamo in San Antonio Texas.", "This is an image of me in the Arches National Park in Utah.", "This is an image of me ice skating with friends in Maggie Daley Park in Chicago.", "This is a picture of me at a Milwaukee Bucs game in Milwaukee."];
-    const imageSource = ["images/universal.jpeg", "images/acapulcoMe.jpeg", "images/alamo.jpeg", "images/arches.jpeg", "images/maggieDaley.jpeg", "images/bucs.jpeg"];
+    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
+    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
+
+    const headerTitles = ["Fajitas Rancheras", "Fajitas Skillet", "Fajita Platter", "Shrimp Fajitas Skillet", "Fajitas Jalisco", "Fajitas De Carnitas", "Fajitas Tulum"];
+    const prices = [18.99, 17.99, 13.99, 19.99, 18.99, 16.99, 14.99];
+    const headerDescritpions = ["Grilled steak, chicken, shrimp, and chorizo.",
+    "",
+    "",
+    "",
+    "Grilled steak, chicken, and shrimp.",
+    "Our special hometown pork tips recipe.",
+    "Shrimp and Mahi-mahi, spicy and grilled to perfection, onions, potatoes, zucchini, carrots, yellow squash, tomato, and mushrooms."];
+    const dis = ["* Fajitas are grilled with onions, bell peppers, and tomatoes. <br> Served with a side of rice, beans, and lettuce. <br> <b class='fajita-side'>Add 1 additional side for $6</b> * <hr width='25%'>"];
+    const imageSource = ["fajitas/fajitas-rancheras.jpeg", "fajitas/fajitas-skillet.jpeg", "fajitas/fajitas-platter.jpeg", "fajitas/fajitas-shrimp-skillet.jpeg", "fajitas/fajitas-jalisco.jpeg", "fajitas/fajitas-de-carnitas.jpeg", "fajitas/fajitas-tulum.jpeg"];
     let s = 0;
 
     function advance(delta) {
@@ -568,10 +592,29 @@ function fajitas() {
         descriptionDiv.innerHTML = headerDescritpions[s];
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
-    }
-    previousButton.addEventListener('click', () => advance(-1));
-    nextButton.addEventListener('click', () => advance(1));
+        disclaimer.innerHTML = dis[0];
 
+        minusButton.addEventListener('click', () => { 
+            if(x < 1) // Number cannot go under 0
+            { 
+                x = 1;
+                price.innerHTML = "$ " + prices[s] * x; 
+                document.getElementById('output-area').innerHTML = x;
+            }
+            else {
+                price.innerHTML = "$ " + prices[s] * x;
+            }     
+        })
+        plusButton.addEventListener('click', () => price.innerHTML = "$ " + prices[s] * x); // If clicked, it will update the price 
+        price.innerHTML = "$ " + prices[s] * x; 
+    }
+    previousButton.addEventListener('click', () => x = 1); 
+    nextButton.addEventListener('click', () => x = 1);
+
+    previousButton.addEventListener('click', () => advance(-1));
+    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+    nextButton.addEventListener('click', () => advance(1));
+    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
     advance(0); 
 }
 function beverages() {

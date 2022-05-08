@@ -44,6 +44,7 @@
     text-align: center;
     font-weight: bold;
     color: red;
+    line-height: 2;
 }
 .description {
     margin-bottom: 2rem;
@@ -51,6 +52,9 @@
     font-family: 'Times New Roman', Times, serif;
 }
 .flour-tortilla {
+    color: green;
+}
+.fajita-side {
     color: green;
 }
 @media (max-width: 1000px) {
