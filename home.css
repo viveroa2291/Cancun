@@ -25,7 +25,7 @@
 }
 .javascriptMenu {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     color: blue;
     margin: 1px;
 }
@@ -38,6 +38,7 @@
 .descriptionBody {
     text-align: center;
     line-height: 2;
+    font-size: 20px;
 }
 .red-arrows {
     color: red;
@@ -45,14 +46,21 @@
 .quantity {
     color: red;
 }
+.maps {
+    color: red;
+}
+.social-media {
+    color: blue;
+}
 .price {
     color: green;
 }
-
+.phone-numbers{
+    color: green;
+}
 .menu-table {
     text-align: center;
 }
-
 .menu-table .menu-list {
     display: inline-block;
 }
@@ -70,5 +78,9 @@
     }
     .descriptionBody {
         line-height: 1.5;
+        font-size: 16px;
+    }
+    .javascriptMenu{
+        font-size: 16px;
     }
 }
