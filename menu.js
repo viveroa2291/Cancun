@@ -13,6 +13,7 @@ function vegetarian() {
 
     document.getElementById('output-area').innerHTML = x;
     
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -26,6 +27,7 @@ function vegetarian() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Vegetarian"];
     const headerTitles = ["Vegetarian Fajita", "Burritos De Frijol", "Burrito Vegetariano"];
     const prices = [14.99, 12.99, 11.99];
     const headerDescritpions = ["Grilled bell peppers, onions, tomato, potatoes, carrots, zucchini, yellow squash and mushrooms. <br> Served with rice, beans and lettuce.",
@@ -41,6 +43,7 @@ function vegetarian() {
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -70,6 +73,7 @@ function appetizers(){
 
     document.getElementById('output-area').innerHTML = x;
     
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -82,7 +86,8 @@ function appetizers(){
 
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
+    
+    const menuHeaderText = ["Appetizers"];
     const headerTitles = ["Queso Fundido", "Mozzarella Sticks", "Cheese Fries", "Chicken Tenders", "Cancun Sampler", "Ceviche De Camaron"];
     const prices = [9.99, 7.99, 6.99, 8.99, 7.99, 13.99,12.99];
     const headerDescritpions = ["Chorize (Mexican sausages) with cheese sauce. <br> Served with flour tortillas.", "Served with fries.", " ", "Served with fries", 
@@ -99,6 +104,7 @@ function appetizers(){
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -129,6 +135,7 @@ function nachos() {
 
     document.getElementById('output-area').innerHTML = x;
     
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -142,6 +149,7 @@ function nachos() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Nachos"];
     const headerTitles = ["Nachos De Mesa", "Nachos Fajitas", "Nachos With Cheese", "Nachos Supreme"]; // Come back here 04-25-22
     const prices = [12.99, 12.99, 8.99, 11.99, 10.99];
     const headerDescritpions = ["Cheese nachos with beef, chicken, and beans. <br> Topped with lettuce and shredded cheese.",
@@ -157,6 +165,7 @@ function nachos() {
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -187,6 +196,7 @@ function salads() {
 
    document.getElementById('output-area').innerHTML = x;
    
+   const menuHeader = document.getElementById('menu-header');
    const previousButton = document.getElementById('previous-button'); // The back button
    const nextButton = document.getElementById('next-button'); // The next button
    const foodType = document.getElementById('food-type'); // header title
@@ -200,6 +210,7 @@ function salads() {
    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+   const menuHeaderText = ["Salads"];
    const headerTitles = ["Taco Salad", "Grilled Shrimp Salad", "Grilled Chicken Salad", "MAHI-MAHI Salad", "Taco Salad Fajitas"];
    const prices = [11.99, 12.99, 12.99, 12.99, 12.99];
    const headerDescritpions = ["A crisp flour tortilla shell stuffed with Chicken or Ground Beef, cheese sauce, lettuce and tomatoes.",
@@ -217,6 +228,7 @@ function salads() {
        foodType.innerHTML = headerTitles[s];
        images.src = imageSource[s];
        disclaimer.innerHTML = dis[0];
+       menuHeader.innerText = menuHeaderText[0];
        minusButton.addEventListener('click', () => { 
            if(x < 1) // Number cannot go under 0
            { 
@@ -247,6 +259,7 @@ function tacos() {
 
     document.getElementById('output-area').innerHTML = x;
 
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -260,6 +273,7 @@ function tacos() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Tacos"];
     const headerTitles = ["Tacos Carne Asada", "Tacos Carnitas", "Tacos Chorizo", "Tacos Al Pastor", "Tacos Pollo Asado", "Tacos De Camaron", "Fish Tacos"];
     const prices = [12.99, 12.99, 12.99, 12.99, 12.99, 12.99, 13.99];
     const headerDescritpions = ["Two grilled steak tacos topped with onions and cilantro. <br> Served with rice, beans, and salsa.",
@@ -279,6 +293,7 @@ function tacos() {
         foodType.innerHTML = headerTitles[s];
         disclaimer.innerHTML = dis[0];
         images.src = imageSource[s];
+        menuHeader.innerText = menuHeaderText[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -309,6 +324,7 @@ function burrito() {
 
     document.getElementById('output-area').innerHTML = x;
     
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -322,6 +338,7 @@ function burrito() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Burritos"];
     const headerTitles = ["Burrito Norteños", "Don Burrito", "Burrito De Carnitas", "Burrito Deshebrada", "Buritos Mexicanos", "Burrito Cancun", "Burrito De La Mesa", "Burrito Bowl"];
     const prices = [12.99, 12.99, 12.99, 12.99, 14.99, 13.99, 11.50, 12.99];
     const headerDescritpions = ["Large flour tortilla filled with cooked pork, cilantro, onions, rice, and beans. <br> Topped with burrito sauce and served with lettuce.",
@@ -342,6 +359,7 @@ function burrito() {
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -373,6 +391,8 @@ function enchiladas() {
     var x = 1;
 
     document.getElementById('output-area').innerHTML = x;
+
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -386,6 +406,7 @@ function enchiladas() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Enchiladas"];
     const headerTitles = ["Enchiladas Rojas", "Enchiladas Verdes", "Enchiladas Rancheras", "Enchiladas De Mesa", "Enchiladas De Pollo", "Enchiladas Mexicanas"];
     const prices = [12.99, 11.99, 11.99, 11.99, 12.99, 11.99];
     const headerDescritpions = ["Three shredded beef enchiladas topped with cheese and ranchero sauce. <br> Served with rice and lettuce.",
@@ -404,6 +425,7 @@ function enchiladas() {
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
 
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
@@ -435,6 +457,8 @@ function quesadillas() {
     var x = 1;
 
     document.getElementById('output-area').innerHTML = x;
+    
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -448,6 +472,7 @@ function quesadillas() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Quesadillas"];
     const headerTitles = ["Cheese Quesadilla", "Chicken or Beef Quesadilla", "Fajita Quesadilla"];
     const prices = [9.99, 10.99, 12.99];
     const headerDescritpions = [" ", "", "Your choice of Grilled Chicken or Steak with sauteed onions, tomatoes, and bell peppers."];
@@ -461,6 +486,7 @@ function quesadillas() {
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
 
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
@@ -490,6 +516,7 @@ function seafood() {
 
     document.getElementById('output-area').innerHTML = x;
     
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -503,6 +530,7 @@ function seafood() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Seafood"];
     const headerTitles = ["Seafood Vallarta", "Ceviche De Camaron", "Mazatlan", "Enchiladas Acapulco", "Cocktel De Camaron", "Quesadilla De Camaron", "Enchiladas Cancun", "Camarones A La Diabla", "Los Cabos Shrimp", "Camarones Al Chipotle", "Shrimp Relleno", "Mojarra Frita", "Cozumel"];
     const prices = [13.99, 12.99, 12.99, 14.99, 16.99, 14.99, 14.99, 15.99, 15.99, 15.99, 12.99, 19.99, 14.99];
     const headerDescritpions = ["Two flour wraps filled with shrimp and crab. <br> Then smothered with cheese sauce. <br> Served with rice and lettuce.",
@@ -528,6 +556,7 @@ function seafood() {
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
@@ -561,6 +590,8 @@ function fajitas() {
     var x = 1;
 
     document.getElementById('output-area').innerHTML = x;
+
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -574,6 +605,7 @@ function fajitas() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Fajitas"];
     const headerTitles = ["Fajitas Rancheras", "Fajitas Skillet", "Fajita Platter", "Shrimp Fajitas Skillet", "Fajitas Jalisco", "Fajitas De Carnitas", "Fajitas Tulum"];
     const prices = [18.99, 17.99, 13.99, 19.99, 18.99, 16.99, 14.99];
     const headerDescritpions = ["Grilled steak, chicken, shrimp, and chorizo.",
@@ -593,6 +625,7 @@ function fajitas() {
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
 
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
@@ -621,6 +654,8 @@ function desserts(){
     var x = 1;
 
     document.getElementById('output-area').innerHTML = x;
+
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -634,6 +669,7 @@ function desserts(){
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Desserts"];
     const headerTitles = ["Ultimate Chocolate Cake", "Grandmother's Carrot Cake", "Cheese Cake", "Cheesecake Chimichanga", "Flan", "Fried Ice Cream", "Ice Cream", "Sundae"];
     const prices = [6.00, 6.00, 5.00, 7.00, 5.00, 6.00, 4.00, 4.00];
     const headerDescritpions = ["Chocolate Heaven: a foundation of chocolate decadence, <br> a layer of chocolate mousse <br> and a layer of chocolate butter cake iced with a rich silky chocolate ganache.", 
@@ -654,6 +690,7 @@ function desserts(){
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
 
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
@@ -682,6 +719,8 @@ function beverages() {
     var x = 1;
 
     document.getElementById('output-area').innerHTML = x;
+
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -695,6 +734,7 @@ function beverages() {
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
+    const menuHeaderText = ["Beverages"];
     const headerTitles = ["Cheese Quesadilla", "Chicken or Beef Quesadilla", "Fajita Quesadilla"];
     const prices = [9.99, 10.99, 12.99];
     const headerDescritpions = [" ", "", "Your choice of Grilled Chicken or Steak with sauteed onions, tomatoes, and bell peppers."];
@@ -708,6 +748,7 @@ function beverages() {
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
 
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0

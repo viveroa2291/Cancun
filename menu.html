@@ -29,21 +29,31 @@
         <section class="menuItems">
             <h2 class="pageTitle" id="header">Menu</h2>
             <hr class="underHeader">
-            <a class="menu-item" href="#vegetarian" onclick="vegetarian()">VEGETARIAN</a>
-            <a class="menu-item" href="#appetizers" onclick="appetizers()">APPETIZERS</a>
-            <a class="menu-item" href="#nachos" onclick="nachos()">NACHOS</a>
-            <a class="menu-item" href="#salads" onclick="salads()">SALADS</a>
-            <a class="menu-item" href="#tacos" onclick="tacos()">TACOS</a>
-            <a class="menu-item" href="#burrito" onclick="burrito()">BURRITO</a>
-            <a class="menu-item" href="#enchiladas" onclick="enchiladas()">ENCHILADAS</a>
-            <a class="menu-item" href="#quesadillas" onclick="quesadillas()">QUESADILLAS</a>
-            <a class="menu-item" href="#seafood" onclick="seafood()">SEAFOOD</a>
-            <a class="menu-item" href="#fajitas" onclick="fajitas()">FAJITAS</a>
-            <a class="menu-item" href="#desserts" onclick="desserts()">DESSERTS</a>
-            <a class="menu-item" href="#beverages" onclick="beverages()">BEVERAGES</a>
+            <div class="menu-nav-bar">
+                <a class="menu-item" href="#vegetarian" onclick="vegetarian()">VEGETARIAN</a>
+                <a class="menu-item" href="#appetizers" onclick="appetizers()">APPETIZERS</a>
+                <a class="menu-item" href="#nachos" onclick="nachos()">NACHOS</a>
+                <a class="menu-item" href="#salads" onclick="salads()">SALADS</a>
+                <a class="menu-item" href="#tacos" onclick="tacos()">TACOS</a>
+                <a class="menu-item" href="#burrito" onclick="burrito()">BURRITO</a>
+                <a class="menu-item" href="#enchiladas" onclick="enchiladas()">ENCHILADAS</a>
+                <a class="menu-item" href="#quesadillas" onclick="quesadillas()">QUESADILLAS</a>
+                <a class="menu-item" href="#seafood" onclick="seafood()">SEAFOOD</a>
+                <a class="menu-item" href="#fajitas" onclick="fajitas()">FAJITAS</a>
+                <a class="menu-item" href="#desserts" onclick="desserts()">DESSERTS</a>  
+                <div class="drop-down">
+                    <a class="menu-item" href="#beverages" onclick="beverages()">BEVERAGES</a>
+                    <div class="drinks">
+                        <a class="menu-item drinks" href="#nonAlcoholic" onclick="nonAlcoholic()">Non-Alcoholic Drinks</a>
+                        <a class="menu-item drinks" href="#alcoholic" onclick="alcoholic()">Alcoholic Drinks</a>
+                    </div>
+                </div>
+            </div>
             <hr>
         </section>
         <section>
+            <h3 class="menu-header" id="menu-header"></h3>
+            <hr class="under-menu-header">
             <div class="gallery-content">
                 <div id="previous-area">
                     <button id="previous-button">&#8249;</button> 
@@ -80,7 +90,8 @@
     var x = 1;
 
     document.getElementById('output-area').innerHTML = x;
-
+   
+    const menuHeader = document.getElementById('menu-header');
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const foodType = document.getElementById('food-type'); // header title
@@ -93,7 +104,7 @@
 
     plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
     minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
+    const menuHeaderText = ["Vegetarian"];
     const headerTitles = ["Vegetarian Fajita", "Burritos De Frijol", "Burrito Vegetariano"];
     const prices = [14.99, 12.99, 11.99];
     const headerDescritpions = ["Grilled bell peppers, onions, tomato, potatoes, carrots, zucchini, yellow squash and mushrooms. <br> Served with rice, beans and lettuce.",
@@ -109,6 +120,7 @@
         foodType.innerHTML = headerTitles[s];
         images.src = imageSource[s];
         disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
         minusButton.addEventListener('click', () => { 
             if(x < 1) // Number cannot go under 0
             { 
