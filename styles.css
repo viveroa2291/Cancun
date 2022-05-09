@@ -5,6 +5,24 @@ nav>a{
 nav>a:hover {
     color: red;
 }
+a.top-nav-link {
+    position: relative;
+}
+a.top-nav-link:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+a.top-nav-link:hover:before {
+    visibility: visible;
+    width: 75%;
+}
 .logo {
     margin: -90px -130px;
     height: 250px;
@@ -49,6 +67,7 @@ header nav {
 .top-nav {
     margin-top: 1rem;
 }
+
 @media (max-width: 1000px) {
     .hamburger {
         display: block;
