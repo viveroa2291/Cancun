@@ -773,3 +773,132 @@ function beverages() {
     nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
     advance(0); 
 }
+function nonAlcoholic() {
+    var x = 1;
+
+    document.getElementById('output-area').innerHTML = x;
+
+    const menuHeader = document.getElementById('menu-header');
+    const previousButton = document.getElementById('previous-button'); // The back button
+    const nextButton = document.getElementById('next-button'); // The next button
+    const foodType = document.getElementById('food-type'); // header title
+    const images = document.getElementById('images');
+    const descriptionDiv = document.getElementById('descriptionBody');
+    const price = document.getElementById('price');
+    const plusButton = document.getElementById('plus-button');
+    const minusButton = document.getElementById('minus-button');
+    const disclaimer = document.getElementById('disclaimer');
+
+    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
+    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
+
+    const menuHeaderText = ["Non-Alcholic Drinks"];
+    const headerTitles = ["Pepsi", "Diet Pepsi", "Pepsi Wild Cherry", "Mountain Dew", "Diet Mountain Dew", "Root Beer", "Dr. Pepper", "Sierra Mist", "Tropicana Pink Lemonade"];
+    const prices = [2.99, 2.99, 2.99, 2.99, 2.99, 2.99, 2.99, 2.99, 2.99];
+    const headerDescritpions = [" ", "", "", "", "", "", "", "", ""];
+    const dis = [""];
+    const imageSource = ["non-alcoholic/pepsi.jpg", "non-alcoholic/dietPepsi.png", "non-alcoholic/pepsi-wild-cherry.jpg", "non-alcoholic/mountainDew.jpeg", "non-alcoholic/diet-mountainDew.jpeg", "non-alcoholic/root-beer.jpg", "non-alcoholic/dr-pepper.jpeg", "non-alcoholic/sierra-mist.jpeg", "non-alcoholic/tropicana-pink-lemonade.jpeg"];
+    let s = 0;
+
+    function advance(delta) {
+        s = (s + delta + headerTitles.length) % headerTitles.length;
+        descriptionDiv.innerHTML = headerDescritpions[s];
+        foodType.innerHTML = headerTitles[s];
+        images.src = imageSource[s];
+        disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
+
+        minusButton.addEventListener('click', () => { 
+            if(x < 1) // Number cannot go under 0
+            { 
+                x = 1;
+                price.innerHTML = "$ " + prices[s] * x; 
+                document.getElementById('output-area').innerHTML = x;
+            }
+            else {
+                price.innerHTML = "$ " + prices[s] * x;
+            }     
+        })
+        plusButton.addEventListener('click', () => price.innerHTML = "$ " + prices[s] * x); // If clicked, it will update the price 
+        price.innerHTML = "$ " + prices[s] * x; 
+    }
+    previousButton.addEventListener('click', () => x = 1); 
+    nextButton.addEventListener('click', () => x = 1);
+
+    previousButton.addEventListener('click', () => advance(-1));
+    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+    nextButton.addEventListener('click', () => advance(1));
+    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+    advance(0);  
+}
+function alcoholic() {
+    var x = 1;
+
+    document.getElementById('output-area').innerHTML = x;
+
+    const menuHeader = document.getElementById('menu-header');
+    const previousButton = document.getElementById('previous-button'); // The back button
+    const nextButton = document.getElementById('next-button'); // The next button
+    const foodType = document.getElementById('food-type'); // header title
+    const images = document.getElementById('images');
+    const descriptionDiv = document.getElementById('descriptionBody');
+    const price = document.getElementById('price');
+    const plusButton = document.getElementById('plus-button');
+    const minusButton = document.getElementById('minus-button');
+    const disclaimer = document.getElementById('disclaimer');
+
+    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
+    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
+
+    const menuHeaderText = ["Alcholic Drinks"];
+    const headerTitles = ["Daiquiris", "Mojitos", "Pina Colada", "Beers-Domestic on Tap", "Beers-Imported", "Domestic Bottled Beers", "Perfect Margarita", "House Margarita", "Spicy Jalapeno", "Spicy Mango", "Cucumber Margarita", "Coronarita", "Tequila Sunrise / Paloma"];
+    const prices = [8.50, 8.99, 8.50, 5.99, 6.99, 3.99, 4.99, 9.00, 12.99, 12.99, 12.99, 11.99, 8.99];
+    const dis = ["* Monday & Tuesday 50% Off House <br> Ask About Our Premium Tequila Selection *"];
+    const headerDescritpions = ["Strawberry, Raspberry Mango and Peach.", 
+    "Lime, Strawberry, Raspberry Mango and Peach.",
+    "",
+    "Bud Light, Michelob Gold, Leinenkugel's Honey Weiss, Miller Lite.",
+    "Dos Equis Lager, Negra Modelo",
+    "64 Bud Light, Bud Light Lime, Budweiser, Michelob Gold, <br> Leinenkugel's Honey Weiss, Coors Light, Busch Light, Miller Lite, Miller 55 Ultra.",
+    "Corona, Corona Light, Corona Familiar, Victoria Pacifico, <br> Modelo Especial, Negra Modelo, Estrella Sol, Tecate, Dos Equis Lager, Dos Equis Amber.",
+    "Made with 100% agave tequila, fresh lime juice, organic agave, nectar, and orange liquor.",
+    "Made with Resposado Tequila Gold, sweet & sour, orange liquour and lime juice. <br> Flavors: <div class='menu-table'> <ul class='menu-list'><li> Lime</li> <li> Strawberry</li> <li> Mango </li> <li> Peach </li> <li> Raspberry Banana</li> <li> Tamarindo </li>",
+    "Tequila Exotico Silver 100% Agave, fresh-squeezed lime juice, organic agave nectar, spicy mango premium gourmet syrup and tajin chili salt rim.",
+    "Tequila Exotico Silver 100% Agave, fresh-squeezed lime juice, organic agave nectar, spicy mango premium gourmet syrup and tajin chili salt rim.",
+    "Tequila Exotico Silver 100% Agave, fresh-squeezed lime juice, organic agave nectar, triple sec, pineapple juice, fresh cucumber, tajin chili salt rim and basil.",
+    "Margarita & Coronita.", 
+    ""];
+    const imageSource = ["alcoholic/daiquiris.jpeg", "alcoholic/mojitos.jpeg", "alcoholic/pina-colada.jpeg", "alcoholic/beers-imported-on-tap.jpeg", "alcoholic/beers-imported.jpeg", "alcoholic/domestic-imported-beers.jpeg", "alcoholic/perfect-margarita.jpeg", "alcoholic/house-margarita.jpeg", "alcoholic/jalapeno.jpeg", "alcoholic/spicy-mango.jpeg", "alcoholic/cucumber.jpeg", "alcoholic/coronarita.jpeg", "alcoholic/tequila-sunrise.jpeg"];
+    let s = 0;
+
+    function advance(delta) {
+        s = (s + delta + headerTitles.length) % headerTitles.length;
+        descriptionDiv.innerHTML = headerDescritpions[s];
+        foodType.innerHTML = headerTitles[s];
+        images.src = imageSource[s];
+        disclaimer.innerHTML = dis[0];
+        menuHeader.innerText = menuHeaderText[0];
+
+        minusButton.addEventListener('click', () => { 
+            if(x < 1) // Number cannot go under 0
+            { 
+                x = 1;
+                price.innerHTML = "$ " + prices[s] * x; 
+                document.getElementById('output-area').innerHTML = x;
+            }
+            else {
+                price.innerHTML = "$ " + prices[s] * x;
+            }     
+        })
+        plusButton.addEventListener('click', () => price.innerHTML = "$ " + prices[s] * x); // If clicked, it will update the price 
+        price.innerHTML = "$ " + prices[s] * x; 
+    }
+    previousButton.addEventListener('click', () => x = 1); 
+    nextButton.addEventListener('click', () => x = 1);
+
+    previousButton.addEventListener('click', () => advance(-1));
+    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+    nextButton.addEventListener('click', () => advance(1));
+    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+    advance(0);   
+}

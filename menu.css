@@ -96,6 +96,12 @@
 .under-menu-header {
     width: 20%;
 }
+.menu-table {
+    text-align: center;
+}
+.menu-table .menu-list {
+    display: inline-block;
+}
 @media (max-width: 1000px) {
     .gallery-images {
         height: 150px;
