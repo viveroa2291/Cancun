@@ -1,6 +1,50 @@
 img {
-    height: 500px;
+    height: 400px;
 }
 .article-footer {
-    text-align: right;
+     text-align: right;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.paragraph {
+    font-size: 18px;
+    align-self: center;
+}
+.delivery {
+    color: red;
+}
+h3 {
+    color: gray;
+}
+@media (max-width: 1400px) { 
+    img {
+        height: 300px;
+    }
+    .paragraph {
+        font-size: 16px;
+    }
+    .article-footer {
+        font-size: 13px;
+        text-align: center;
+    }
+    section {
+        flex-direction: column;
+    }
+    .images-bottom, .images-top {
+        margin: auto;
+    }
+}
+@media (max-width: 950px) {
+    img {
+        height: 200px;
+    }
+    .paragraph {
+        font-size: 14px;
+    }
+    .article-footer {
+        font-size: 12px;
+    }
 }
