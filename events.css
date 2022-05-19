@@ -53,3 +53,24 @@ img {
     align-self: center;
     text-align: center;
 }
+@media (max-width: 1000px) { 
+    main {
+        max-width: fit-content;
+    }
+    .month {
+        width: 75%;
+        font-size: 40px;
+    }
+    .special {
+        font-size: 30px;
+        width: 50%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .body {
+        flex-direction: column;
+    }
+    img {
+        height: 350px;
+    }
+}
