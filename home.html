@@ -12,7 +12,7 @@
 <body>     
     <header> 
         <img class="logo" src="images/cancunLogo.svg" alt="Logo">
-        <div class="hamburger" onclick="toggleNav(); myRotate(this);">
+        <div id="hamburger" class="hamburger" onclick="toggleNav(); myRotate(this);">
             <hr class="hr1">
             <hr class="hr2">
             <hr class="hr3">
@@ -29,7 +29,7 @@
         <section class="large-template">
             <img class="large-template-logo" src="images/cancunLogo.svg" alt="Logo">
         </section>
-        <section>
+        <section class="body-section">
             <h2 class="pageTitle" id="header"></h2>
             <hr class="underHeader">
             <div class="gallery-content">
@@ -56,17 +56,21 @@
 </html>
 
 <script>
-
     function myRotate(x) {    
         x.classList.toggle("change");
     }   
     function toggleNav() {    
         let elements = document.getElementsByClassName('top-nav');
+        if(document.getElementById('hamburger').style.marginBottom === "10rem") {
+            document.getElementById('hamburger').style.marginBottom="0";
+        }
+        else {
+           document.getElementById('hamburger').style.marginBottom="10rem"; 
+        }
         for(let i = 0; i < elements.length; i++) {
             elements[i].classList.toggle('show');
         }
     }
-
     const previousButton = document.getElementById('previous-button'); // The back button
     const nextButton = document.getElementById('next-button'); // The next button
     const headerDiv = document.getElementById('header'); // header title
@@ -79,7 +83,7 @@
     "In the <a class='javascriptMenu' href='about.html'>About Page</a>, we dive into the history of Cancun Mexican Grill and a brief overview of our philosophy and values. <br> Be sure to check it out.",
     "Our contact page provides <b class='maps'>Maps</b> of our <b class='maps'>Store Locations</b> along with the <b class='maps'>Store Hours</b>, <b class='phone-numbers'>Phone Numbers</b>, and <b class='social-media'>Social Media</b>. <br> Be sure to check it out if you need to contact us.", 
     "Be sure to check out our <a class='javascriptMenu' href='events.html'>Upcoming Events</a> and what is happening at our restaurants or <br> be sure to check us out on Facebook."];
-    const imageSource = ["images/homePage.png", "images/menuSelection.jpeg", "images/restaurant.jpeg", "images/at-your-service.jpeg", "images/cinco.png"];
+    const imageSource = ["images/cancun-logo.jpeg", "images/menuSelection.jpeg", "images/restaurant.jpeg", "images/at-your-service.jpeg", "images/cinco.png"];
     let s = 0;
 
     function advance(delta) {

@@ -12,7 +12,7 @@
 <body>
     <header>
         <img class="logo" src="images/cancunLogo.svg" alt="Logo">
-        <div class="hamburger" onclick="toggleNav(); myRotate(this);">
+        <div id="hamburger" class="hamburger" onclick="toggleNav(); myRotate(this);">
             <hr class="hr1">
             <hr class="hr2">
             <hr class="hr3">
@@ -42,7 +42,7 @@
                 <a class="menu-item" href="#fajitas" onclick="fajitas()">FAJITAS</a>
                 <a class="menu-item" href="#desserts" onclick="desserts()">DESSERTS</a>  
                 <div class="drop-down">
-                    <a class="menu-item" href="#beverages" onclick="beverages()">BEVERAGES</a>
+                    <a class="menu-item" href="#beverages">BEVERAGES</a>
                     <div class="drinks">
                         <a class="menu-item drinks" href="#nonAlcoholic" onclick="nonAlcoholic()">Non-Alcoholic Drinks</a>
                         <a class="menu-item drinks" href="#alcoholic" onclick="alcoholic()">Alcoholic Drinks</a>
@@ -51,7 +51,7 @@
             </div>
             <hr>
         </section>
-        <section>
+        <section class="body-section">
             <h3 class="menu-header" id="menu-header"></h3>
             <hr class="under-menu-header">
             <div class="gallery-content">

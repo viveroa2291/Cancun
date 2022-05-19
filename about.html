@@ -12,7 +12,7 @@
 <body>
     <header>
         <img class="logo" src="images/cancunLogo.svg" alt="Logo">
-        <div class="hamburger" onclick="toggleNav(); myRotate(this);">
+        <div id="hamburger" class="hamburger" onclick="toggleNav(); myRotate(this);">
             <hr class="hr1">
             <hr class="hr2">
             <hr class="hr3">
@@ -35,9 +35,11 @@
                     <footer class="article-footer"><p><span>Cancun Mexican Grill on 2713 N Clairemont Ave, Eau Claire WI 54703 <br>
                     </span> April 27, 2022</p></footer>     
                 </article> 
-                <img src="images/hastings.jpg" alt="Hastings Location">
-                <footer class="article-footer"><p><span>Cancun Mexican Grill on 1919 Stout Rd, Menomonie, WI 54751 <br>
-                </span> May 02, 2020</p></footer> 
+                <article>
+                    <img src="images/hastings.jpg" alt="Hastings Location">
+                    <footer class="article-footer"><p><span>Cancun Mexican Grill on 1919 Stout Rd, Menomonie, WI 54751 <br>
+                    </span> May 02, 2020</p></footer> 
+                </article>
             </div> 
             <div class="paragraph">
                 <h3>Overview</h3>
@@ -65,16 +67,21 @@
             </div> 
         </section>
         <section>
-            <div class="images-bottom">
-                <img src="images/menomonie.jpeg" alt="Menomonie Location">
-                <footer class="article-footer"><p><span>Cancun Mexican Grill on 1919 Stout Rd, Menomonie, WI 54751 <br>
-                </span> June 20, 2019</p></footer>   
-            </div>
-            <div class="images-bottom">
-                <img src="images/chipewwa.jpeg" alt="Chipewwa Location">
-                <footer class="article-footer"><p><span>Cancun Mexican Grill on 475 Chippewa Mall Dr #105, Chipewwa Falls, WI 54729 <br>
-                </span> July 17, 2018</p></footer> 
-            </div>
+            <article>
+                <div class="images-bottom">
+                    <img src="images/menomonie.jpeg" alt="Menomonie Location">
+                    <footer class="article-footer"><p><span>Cancun Mexican Grill on<br> 1919 Stout Rd, Menomonie, WI 54751 <br>
+                    </span> June 20, 2019</p></footer>   
+                </div>
+            </article>
+            <article>
+                <div class="images-bottom">
+                    <img src="images/chipewwa.jpeg" alt="Chipewwa Location">
+                    <footer class="article-footer"><p><span>Cancun Mexican Grill on <br> 475 Chippewa Mall Dr #105, Chipewwa Falls, WI 54729 <br>
+                    </span> July 17, 2018</p></footer> 
+                </div>
+            </article>
+            
         </section>
     </main>
     <footer class="bottom-footer">

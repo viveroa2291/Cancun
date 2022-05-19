@@ -3,6 +3,12 @@ function myRotate(x) {
 }   
 function toggleNav() {    
     let elements = document.getElementsByClassName('top-nav');
+    if(document.getElementById('hamburger').style.marginBottom === "10rem") {
+        document.getElementById('hamburger').style.marginBottom="0";
+    }
+    else {
+       document.getElementById('hamburger').style.marginBottom="10rem"; 
+    }
     for(let i = 0; i < elements.length; i++) {
         elements[i].classList.toggle('show');
     }
@@ -682,64 +688,6 @@ function desserts(){
     "Three scoops of vanilla ice cream with your choice of strawberry or chocolate syrup topped with whipped cream and a cherry."];
     const dis = [""];
     const imageSource = ["dessert/chocolate-cake.jpeg", "dessert/carrot-cake.jpeg", "dessert/cheese-cake.jpeg", "dessert/cheese-cake-chimichanga.jpeg", "dessert/flan.jpeg", "dessert/fried-ice-cream.jpeg", "dessert/ice-cream.jpeg", "dessert/sundae.jpeg"];
-    let s = 0;
-
-    function advance(delta) {
-        s = (s + delta + headerTitles.length) % headerTitles.length;
-        descriptionDiv.innerHTML = headerDescritpions[s];
-        foodType.innerHTML = headerTitles[s];
-        images.src = imageSource[s];
-        disclaimer.innerHTML = dis[0];
-        menuHeader.innerText = menuHeaderText[0];
-
-        minusButton.addEventListener('click', () => { 
-            if(x < 1) // Number cannot go under 0
-            { 
-                x = 1;
-                price.innerHTML = "$ " + prices[s] * x; 
-                document.getElementById('output-area').innerHTML = x;
-            }
-            else {
-                price.innerHTML = "$ " + prices[s] * x;
-            }     
-        })
-        plusButton.addEventListener('click', () => price.innerHTML = "$ " + prices[s] * x); // If clicked, it will update the price 
-        price.innerHTML = "$ " + prices[s] * x; 
-    }
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    advance(0); 
-}
-function beverages() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    const menuHeader = document.getElementById('menu-header');
-    const previousButton = document.getElementById('previous-button'); // The back button
-    const nextButton = document.getElementById('next-button'); // The next button
-    const foodType = document.getElementById('food-type'); // header title
-    const images = document.getElementById('images');
-    const descriptionDiv = document.getElementById('descriptionBody');
-    const price = document.getElementById('price');
-    const plusButton = document.getElementById('plus-button');
-    const minusButton = document.getElementById('minus-button');
-    const disclaimer = document.getElementById('disclaimer');
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    const menuHeaderText = ["Beverages"];
-    const headerTitles = ["Cheese Quesadilla", "Chicken or Beef Quesadilla", "Fajita Quesadilla"];
-    const prices = [9.99, 10.99, 12.99];
-    const headerDescritpions = [" ", "", "Your choice of Grilled Chicken or Steak with sauteed onions, tomatoes, and bell peppers."];
-    const dis = ["* Quesadillas served with lettuce, sour cream, and tomatoes. * <hr width='25%'>"];
-    const imageSource = ["quesadillas/cheese-quesadilla.jpeg", "quesadillas/chicken-quesadilla.jpeg", "quesadillas/fajita-quesadilla.jpeg"];
     let s = 0;
 
     function advance(delta) {

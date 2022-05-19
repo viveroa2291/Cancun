@@ -29,14 +29,28 @@
 .price {
     text-align: center;
 }
+a.menu-item {
+    position: relative;
+}
+a.menu-item:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: gray;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+a.menu-item:hover:before {
+    visibility: visible;
+    width: 100%;
+}
 .menu-item {
     text-decoration: none;
     color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.menu-item:hover {
-    color: gray;
-    text-decoration: underline;
 }
 .menuItems {
     text-align: center;
@@ -102,6 +116,16 @@
 .menu-table .menu-list {
     display: inline-block;
 }
+.body-section {
+    background-color: antiquewhite;
+    padding: 1rem;
+    border-radius: 15px;
+}
+@media (max-width: 1500px) {
+    .gallery-images {
+        height: 300px;
+    }
+}
 @media (max-width: 1000px) {
     .gallery-images {
         height: 150px;
@@ -122,5 +146,8 @@
     }
     .menu-nav-bar a {
         line-height: 1.5;
+    }
+    .descriptionBody {
+        margin: 0 2rem;
     }
 }

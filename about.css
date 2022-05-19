@@ -12,12 +12,21 @@ section {
 .paragraph {
     font-size: 18px;
     align-self: center;
+    background-color: antiquewhite;
+    padding: 1rem 2rem 2rem 2rem;
+    border-radius: 15px;
 }
 .delivery {
     color: red;
 }
 h3 {
     color: gray;
+}
+article {
+    background-color: antiquewhite;
+    padding: 2rem 3rem .5rem 3rem;
+    border-radius: 15px;
+    margin-top: 1rem;
 }
 @media (max-width: 1400px) { 
     img {
@@ -36,6 +45,12 @@ h3 {
     .images-bottom, .images-top {
         margin: auto;
     }
+    article {
+        margin: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 1rem 2rem .5rem 2rem;
+    }
 }
 @media (max-width: 950px) {
     img {
@@ -46,5 +61,14 @@ h3 {
     }
     .article-footer {
         font-size: 12px;
+    }
+    .images-bottom {
+        margin: auto;
+    }
+    article {
+        margin: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 1rem 2rem .5rem 2rem;
     }
 }
