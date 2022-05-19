@@ -13,6 +13,65 @@ function toggleNav() {
         elements[i].classList.toggle('show');
     }
 }
+
+var x = 1;
+
+document.getElementById('output-area').innerHTML = x;
+
+const menuHeader = document.getElementById('menu-header');
+const previousButton = document.getElementById('previous-button'); // The back button
+const nextButton = document.getElementById('next-button'); // The next button
+const foodType = document.getElementById('food-type'); // header title
+const images = document.getElementById('images');
+const descriptionDiv = document.getElementById('descriptionBody');
+const price = document.getElementById('price');
+const plusButton = document.getElementById('plus-button');
+const minusButton = document.getElementById('minus-button');
+const disclaimer = document.getElementById('disclaimer');
+
+plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
+minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
+const menuHeaderText = ["Vegetarian"];
+const headerTitles = ["Vegetarian Fajita", "Burritos De Frijol", "Burrito Vegetariano"];
+const prices = [14.99, 12.99, 11.99];
+const headerDescritpions = ["Grilled bell peppers, onions, tomato, potatoes, carrots, zucchini, yellow squash and mushrooms. <br> Served with rice, beans and lettuce.",
+"Two bean burritos topped with cheese sauce. <br> Served with rice and lettuce.", 
+"A large flour tortilla filled with grilled bell peppers, onions, potatoes, zucchini, carrots, yellow squash, tomatoes and mushrooms. <br> Topped with cheese sauce and served with rice and lettuce."];
+const dis = ["* Tomatoes, sour cream and pico de gallo are complementary upon request. <hr width='25%'>"];
+const imageSource = ["vegetarian/vegetarianFajitas.png", "vegetarian/burritoDeFrijole.png", "vegetarian/burritoVegetariano.jpeg"];
+let s = 0;
+
+function advance(delta) {
+    s = (s + delta + headerTitles.length) % headerTitles.length;
+    descriptionDiv.innerHTML = headerDescritpions[s];
+    foodType.innerHTML = headerTitles[s];
+    images.src = imageSource[s];
+    disclaimer.innerHTML = dis[0];
+    menuHeader.innerText = menuHeaderText[0];
+    minusButton.addEventListener('click', () => { 
+        if(x < 1) // Number cannot go under 0
+        { 
+            x = 1;
+            price.innerHTML = "$ " + prices[s] * x; 
+            document.getElementById('output-area').innerHTML = x;
+        }
+        else {
+            price.innerHTML = "$ " + prices[s] * x;
+        }     
+    })
+    plusButton.addEventListener('click', () => price.innerHTML = "$ " + prices[s] * x); // If clicked, it will update the price 
+    price.innerHTML = "$ " + prices[s] * x; 
+}
+previousButton.addEventListener('click', () => x = 1); 
+nextButton.addEventListener('click', () => x = 1);
+
+previousButton.addEventListener('click', () => advance(-1));
+previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+nextButton.addEventListener('click', () => advance(1));
+nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
+
+advance(0);  
+
 function vegetarian() {
    
     var x = 1;
