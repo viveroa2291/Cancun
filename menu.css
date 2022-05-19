@@ -1,7 +1,7 @@
-#next-area, #previous-area {
+.next-area, .previous-area {
     margin: auto;
 }
-#next-button, #previous-button{
+.next-button, .previous-button{
     color: white;
     background: red;
     height: 4rem;
@@ -9,7 +9,7 @@
     border-radius: 50%;
     font-size: 2rem;
 }
-#next-button:hover, #previous-button:hover {
+.next-button:hover, .previous-button:hover {
     background: green;
     cursor: pointer;
 }
@@ -130,7 +130,7 @@ a.menu-item:hover:before {
     .gallery-images {
         height: 150px;
     }
-    #next-button, #previous-button{
+    .next-button, .previous-button{
         color: white;
         background: red;
         height: 3rem;

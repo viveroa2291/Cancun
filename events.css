@@ -64,8 +64,7 @@ img {
     .special {
         font-size: 30px;
         width: 50%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 0 1rem;
     }
     .body {
         flex-direction: column;
