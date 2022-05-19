@@ -1,0 +1,55 @@
+main {
+    background-color: #ebebeb;
+    padding: 2rem;
+    max-width: 70rem;
+    margin: 1rem auto;
+    border-radius: 15px;
+}
+article {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1rem;
+    margin: 1rem;
+}
+.month {
+    margin: auto;
+    text-align: center;
+    background-color: green;
+    color: white;
+    font-size: 50px;
+    width: 50%;
+    border-radius: 15px;
+}
+.cinco {
+    color: red;
+}
+.special {
+    margin: auto;
+    margin-top: .5rem;
+    color: white;
+    background-color: red;
+    text-align: center;
+    font-size: 35px;
+    border-radius: 15px;
+}
+img {
+    height: 500px;
+}
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: .5rem;
+}
+.details {
+    text-align: right;
+    color: gray;
+    font-style: italic;
+    font-size: 18px;
+    margin-right: 1rem;
+}
+.body-description {
+    font-size: 18px;
+    align-self: center;
+    text-align: center;
+}
