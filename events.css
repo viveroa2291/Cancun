@@ -73,3 +73,20 @@ img {
         height: 350px;
     }
 }
+@media (max-width: 390px) {
+    .month {
+        font-size: 18px;
+    }
+    .special {
+        font-size: 14px;
+    }
+    img {
+        height: 250px;
+    }
+    .body-description {
+        font-size: 14px;
+    }
+    .details {
+        font-size: 10px;
+    }
+}

@@ -151,3 +151,16 @@ a.menu-item:hover:before {
         margin: 0 2rem;
     }
 }
+@media (max-width: 390px) {
+    .gallery-images {
+        height: 100px;
+    }
+    .next-button, .previous-button{
+        color: white;
+        background: red;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        font-size: 1rem;
+    }
+}

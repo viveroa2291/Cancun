@@ -92,3 +92,8 @@
         margin: 0 2rem;
     }
 }
+@media (max-width: 390px) {
+    .gallery-images {
+        max-height: 100px;
+    } 
+}
