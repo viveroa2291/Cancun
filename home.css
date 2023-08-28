@@ -39,6 +39,7 @@
     text-align: center;
     line-height: 2;
     font-size: 20px;
+    margin-top: 1rem;
 }
 .red-arrows {
     color: red;
@@ -89,11 +90,17 @@
         font-size: 16px;
     }
     .descriptionBody {
-        margin: 0 2rem;
+        margin: 1.5rem 2rem;
     }
 }
 @media (max-width: 490px) {
     .gallery-images {
         max-height: 100px;
     } 
+    .descriptionBody {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.5rem;
+    }
 }
