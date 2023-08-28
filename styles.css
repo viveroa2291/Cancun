@@ -161,7 +161,7 @@ header nav {
         font-size: 20px;
     }
 }
-@media (max-width: 390px) {
+@media (max-width: 490px) {
     .bottom-nav-link {
         font-size: 12px;
     }

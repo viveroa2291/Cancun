@@ -151,7 +151,7 @@ a.menu-item:hover:before {
         margin: 0 2rem;
     }
 }
-@media (max-width: 390px) {
+@media (max-width: 490px) {
     .gallery-images {
         height: 100px;
     }

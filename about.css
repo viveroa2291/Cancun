@@ -72,7 +72,7 @@ article {
         padding: 1rem 2rem .5rem 2rem;
     }
 }
-@media (max-width: 390px) {
+@media (max-width: 490px) {
     img {
         height: 150px;
     }

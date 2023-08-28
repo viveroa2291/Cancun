@@ -76,7 +76,7 @@ h2 {
          margin: auto;
      }
 }
-@media (max-width: 390px) {
+@media (max-width: 490px) {
     .left-map {
         display: block;
         margin: auto;
