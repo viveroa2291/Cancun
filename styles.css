@@ -92,6 +92,9 @@ header nav {
         width: 40px;
         padding: .5rem;
     }
+    .hamburger:hover {
+        cursor: pointer;
+    }
     .hamburger hr {
         margin: .45rem 0;
         border: 2px solid black;
@@ -115,12 +118,6 @@ header nav {
         -webkit-transform: rotate(45deg) translate(-8px, -8px);
         transform: rotate(45deg) translate(-8px, -8px);
     }
-    /*
-    .hamburger:hover, hr:hover {
-        color: red;
-        border: 2px solid red;
-    }
-    */
     header nav {
         background-color: green;
         position: fixed; 

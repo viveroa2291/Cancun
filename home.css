@@ -1,10 +1,13 @@
 .pageTitle {
     text-align: center;
 }
-.next-area, .previous-area {
+.previous-area, .next-area {
     margin: auto;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
-.next-button, .previous-button{
+.next-button, .previous-button{    
+    text-align: center;
     color: white;
     background: red;
     height: 4rem;
@@ -19,9 +22,11 @@
 .gallery-content{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .gallery-images {
-    height: 450px;
+    height: 350px;
+    border-radius: 15px;
 }
 .javascriptMenu {
     text-decoration: none;
@@ -36,9 +41,12 @@
     background-image: url('images/platters.jpeg');
 }
 .descriptionBody {
-    text-align: center;
-    line-height: 2;
-    font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    line-height: 1.5;
+    font-size: 16px;
     margin-top: 1rem;
 }
 .red-arrows {
@@ -61,6 +69,7 @@
 }
 .menu-table {
     text-align: center;
+    margin-left: -3rem;
 }
 .menu-table .menu-list {
     display: inline-block;
@@ -69,10 +78,17 @@
     background-color: beige;
     padding: 1rem;
     border-radius: 15px;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
 }
 @media (max-width: 1000px) {
     .gallery-images {
         height: 200px;
+    }
+    .previous-area, .next-area {
+        margin: auto;
+        margin-left: .5rem;
+        margin-right: .5rem;
     }
     .next-button, .previous-button{
         color: white;
@@ -90,7 +106,7 @@
         font-size: 16px;
     }
     .descriptionBody {
-        margin: 1.5rem 2rem;
+        width: 75%;
     }
 }
 @media (max-width: 490px) {
