@@ -30,12 +30,12 @@
 }
 .javascriptMenu {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     color: blue;
     margin: 1px;
 }
 .javascriptMenu:hover{
-    color: black;
+    opacity: 50%;
 }
 .large-template {
     background-image: url('images/platters.jpeg');
@@ -44,7 +44,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
+    width: 45%;
     line-height: 1.5;
     font-size: 16px;
     margin-top: 1rem;
@@ -104,7 +104,7 @@
         font-size: 16px;
     }
     .javascriptMenu{
-        font-size: 16px;
+        font-size: 14px;
     }
     .descriptionBody {
         width: 75%;

@@ -51,6 +51,9 @@ h2 {
 .cancun-link:hover {
     color: gray;
 }
+.store-hours-div {
+    align-self: center;
+}
 @media (max-width: 1000px) {
     .store-location {
         display: flex;
