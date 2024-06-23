@@ -7,7 +7,7 @@
 .next-area, .previous-area {
     margin: auto;
 }
-.next-button, .previous-button{
+.next-button, .previous-button {
     color: white;
     background: red;
     height: 4rem;
