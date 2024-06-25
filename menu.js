@@ -227,8 +227,6 @@ minusButton.addEventListener('click', () => document.getElementById('output-area
 function advance(delta) {
     if (currentMenu) {
         s = (s + delta + currentMenu.headerTitles.length) % currentMenu.headerTitles.length;
-        console.log("s: " + s);
-        console.log("Length: " + currentMenu.headerTitles.length);
         descriptionDiv.innerHTML = currentMenu.headerDescriptions[s];
         foodType.innerHTML = currentMenu.headerTitles[s];
         images.src = currentMenu.imageSource[s];
@@ -254,6 +252,10 @@ nextButton.addEventListener('click', () => advance(1));
 function showVegetarian() {
     setupMenu(vegeterian);
 }
+// Vegetarian Default Menu Option
+document.addEventListener('DOMContentLoaded', (event) => {
+    showVegetarian();
+});
 function showAppetizers() {
     setupMenu(appetizersClass);
 }
