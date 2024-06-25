@@ -246,7 +246,6 @@ function setupMenu(menu) {
     advance(0);
 }
 
-// Ensure event listeners are attached only once
 plusButton.addEventListener('click', () => updateQuantity(++x));
 minusButton.addEventListener('click', () => updateQuantity(Math.max(--x, 1)));
 previousButton.addEventListener('click', () => advance(-1));
