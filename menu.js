@@ -193,6 +193,8 @@ const alcoholics = new MenuSelection(["Alcholic Drinks"],
 );
 
 var x = 1;
+var s = 0;
+var currentMenu = null;
 
 document.getElementById('output-area').innerHTML = x;
 
@@ -207,282 +209,98 @@ const plusButton = document.getElementById('plus-button');
 const minusButton = document.getElementById('minus-button');
 const disclaimer = document.getElementById('disclaimer');
 
+function updateQuantity(newX) {
+    x = newX;
+    document.getElementById('output-area').innerHTML = x;
+    updatePrice();
+}
+
+function updatePrice() {
+    if (currentMenu) {
+        price.innerHTML = "$ " + currentMenu.prices[s] * x;
+    }
+}
+
 plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
 minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
 
-var s = 0;
-
-function advance(delta, menuHeaderText, headerTitles, prices, headerDescriptions, dis, imageSource) {
-    s = (s + delta + headerTitles.length) % headerTitles.length;
-    console.log("s: " + s);
-    console.log("Length: " + headerTitles.length);
-    descriptionDiv.innerHTML = headerDescriptions[s];
-    foodType.innerHTML = headerTitles[s];
-    images.src = imageSource[s];
-    disclaimer.innerHTML = dis[0];
-    menuHeader.innerText = menuHeaderText[0];
-    minusButton.addEventListener('click', () => { 
-        if(x < 1) // Number cannot go under 0
-        { 
-            x = 1;
-            price.innerHTML = "$ " + prices[s] * x; 
-            document.getElementById('output-area').innerHTML = x;
-        }
-        else {
-            price.innerHTML = "$ " + prices[s] * x;
-        }     
-    })
-    plusButton.addEventListener('click', () => price.innerHTML = "$ " + prices[s] * x); // If clicked, it will update the price 
-    price.innerHTML = "$ " + prices[s] * x; 
+function advance(delta) {
+    if (currentMenu) {
+        s = (s + delta + currentMenu.headerTitles.length) % currentMenu.headerTitles.length;
+        console.log("s: " + s);
+        console.log("Length: " + currentMenu.headerTitles.length);
+        descriptionDiv.innerHTML = currentMenu.headerDescriptions[s];
+        foodType.innerHTML = currentMenu.headerTitles[s];
+        images.src = currentMenu.imageSource[s];
+        disclaimer.innerHTML = currentMenu.dis[0];
+        menuHeader.innerText = currentMenu.menuHeaderText[0];
+        updatePrice();
+    }
 }
-s = 0;
-/*
-previousButton.addEventListener('click', () => x = 1); 
-nextButton.addEventListener('click', () => x = 1);
 
-previousButton.addEventListener('click', () => advance(-1, vegeterian.menuHeaderText, vegeterian.headerTitles, vegeterian.prices, vegeterian.headerDescriptions, vegeterian.dis, vegeterian.imageSource));
-previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-nextButton.addEventListener('click', () => advance(1, vegeterian.menuHeaderText, vegeterian.headerTitles, vegeterian.prices, vegeterian.headerDescriptions, vegeterian.dis, vegeterian.imageSource));
-nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-
-advance(0, vegeterian.menuHeaderText, vegeterian.headerTitles, vegeterian.prices, vegeterian.headerDescriptions, vegeterian.dis, vegeterian.imageSource);  
-*/
-function vegetarian() {
-   
-    var x = 1;
-
+function setupMenu(menu) {
+    x = 1;
+    s = 0;
+    currentMenu = menu;
     document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-    
-    previousButton.addEventListener('click', () => advance(-1, vegeterian.menuHeaderText, vegeterian.headerTitles, vegeterian.prices, vegeterian.headerDescriptions, vegeterian.dis, vegeterian.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, vegeterian.menuHeaderText, vegeterian.headerTitles, vegeterian.prices, vegeterian.headerDescriptions, vegeterian.dis, vegeterian.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    console.log("Tippy");
-    advance(0, vegeterian.menuHeaderText, vegeterian.headerTitles, vegeterian.prices, vegeterian.headerDescriptions, vegeterian.dis, vegeterian.imageSource);   
+    advance(0);
 }
-function appetizers() {
-    var x = 1;
 
-    document.getElementById('output-area').innerHTML = x;
+// Ensure event listeners are attached only once
+plusButton.addEventListener('click', () => updateQuantity(++x));
+minusButton.addEventListener('click', () => updateQuantity(Math.max(--x, 1)));
+previousButton.addEventListener('click', () => advance(-1));
+nextButton.addEventListener('click', () => advance(1));
 
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, appetizersClass.menuHeaderText, appetizersClass.headerTitles, appetizersClass.prices, appetizersClass.headerDescriptions, appetizersClass.dis, appetizersClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, appetizersClass.menuHeaderText, appetizersClass.headerTitles, appetizersClass.prices, appetizersClass.headerDescriptions, appetizersClass.dis, appetizersClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-
-    advance(0, appetizersClass.menuHeaderText, appetizersClass.headerTitles, appetizersClass.prices, appetizersClass.headerDescriptions, appetizersClass.dis, appetizersClass.imageSource);  
+function showVegetarian() {
+    setupMenu(vegeterian);
 }
-function nachos() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-    
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, nachosClass.menuHeaderText, nachosClass.headerTitles, nachosClass.prices, nachosClass.headerDescriptions, nachosClass.dis, nachosClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, nachosClass.menuHeaderText, nachosClass.headerTitles, nachosClass.prices, nachosClass.headerDescriptions, nachosClass.dis, nachosClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-
-    advance(0, nachosClass.menuHeaderText, nachosClass.headerTitles, nachosClass.prices, nachosClass.headerDescriptions, nachosClass.dis, nachosClass.imageSource);   
+function showAppetizers() {
+    setupMenu(appetizersClass);
 }
-function salads() {
-   var x = 1;
-
-   document.getElementById('output-area').innerHTML = x;
-
-   plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-   minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-   previousButton.addEventListener('click', () => x = 1); 
-   nextButton.addEventListener('click', () => x = 1);
-
-   previousButton.addEventListener('click', () => advance(-1, saladsClass.menuHeaderText, saladsClass.headerTitles, saladsClass.prices, saladsClass.headerDescriptions, saladsClass.dis, saladsClass.imageSource));
-   previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-   nextButton.addEventListener('click', () => advance(1, saladsClass.menuHeaderText, saladsClass.headerTitles, saladsClass.prices, saladsClass.headerDescriptions, saladsClass.dis, saladsClass.imageSource));
-   nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-
-   advance(0, saladsClass.menuHeaderText, saladsClass.headerTitles, saladsClass.prices, saladsClass.headerDescriptions, saladsClass.dis, saladsClass.imageSource);   
+function showNachos() {
+    setupMenu(nachosClass);
 }
-function tacos() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
- 
-    previousButton.addEventListener('click', () => advance(-1, tacosClass.menuHeaderText, tacosClass.headerTitles, tacosClass.prices, tacosClass.headerDescriptions, tacosClass.dis, tacosClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, tacosClass.menuHeaderText, tacosClass.headerTitles, tacosClass.prices, tacosClass.headerDescriptions, tacosClass.dis, tacosClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-
-    advance(0, tacosClass.menuHeaderText, tacosClass.headerTitles, tacosClass.prices, tacosClass.headerDescriptions, tacosClass.dis, tacosClass.imageSource); 
+function showSalads() {
+    setupMenu(saladsClass);
 }
-function burrito() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, burritoClass.menuHeaderText, burritoClass.headerTitles, burritoClass.prices, burritoClass.headerDescriptions, burritoClass.dis, burritoClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, burritoClass.menuHeaderText, burritoClass.headerTitles, burritoClass.prices, burritoClass.headerDescriptions, burritoClass.dis, burritoClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-
-    advance(0, burritoClass.menuHeaderText, burritoClass.headerTitles, burritoClass.prices, burritoClass.headerDescriptions, burritoClass.dis, burritoClass.imageSource);  
+function showTacos() {
+    setupMenu(tacosClass);
 }
-/** 
- * Note to self, maybe add a "add flour tortilla" option? We'll see 
- */
-function enchiladas() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, enchiladaClass.menuHeaderText, enchiladaClass.headerTitles, enchiladaClass.prices, enchiladaClass.headerDescriptions, enchiladaClass.dis, enchiladaClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, enchiladaClass.menuHeaderText, enchiladaClass.headerTitles, enchiladaClass.prices, enchiladaClass.headerDescriptions, enchiladaClass.dis, enchiladaClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    advance(0, enchiladaClass.menuHeaderText, enchiladaClass.headerTitles, enchiladaClass.prices, enchiladaClass.headerDescriptions, enchiladaClass.dis, enchiladaClass.imageSource); 
+function showBurrito() {
+    setupMenu(burritoClass);
 }
-/**
- * Note to self, add mushrooms option, we'll see.
- */
-function quesadillas() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, quesadillasClass.menuHeaderText, quesadillasClass.headerTitles, quesadillasClass.prices, quesadillasClass.headerDescriptions, quesadillasClass.dis, quesadillasClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, quesadillasClass.menuHeaderText, quesadillasClass.headerTitles, quesadillasClass.prices, quesadillasClass.headerDescriptions, quesadillasClass.dis, quesadillasClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    advance(0, quesadillasClass.menuHeaderText, quesadillasClass.headerTitles, quesadillasClass.prices, quesadillasClass.headerDescriptions, quesadillasClass.dis, quesadillasClass.imageSource); 
+function showEnchiladas() {
+    setupMenu(enchiladaClass);
 }
-function seafood() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, seafoodClass.menuHeaderText, seafoodClass.headerTitles, seafoodClass.prices, seafoodClass.headerDescriptions, seafoodClass.dis, seafoodClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, seafoodClass.menuHeaderText, seafoodClass.headerTitles, seafoodClass.prices, seafoodClass.headerDescriptions, seafoodClass.dis, seafoodClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-
-    advance(0, seafoodClass.menuHeaderText, seafoodClass.headerTitles, seafoodClass.prices, seafoodClass.headerDescriptions, seafoodClass.dis, seafoodClass.imageSource);  
+function showQuesadillas() {
+    setupMenu(quesadillasClass);
 }
-/**
- * Note to self
- * If there's time, we'll add a feature to add an additional side for $6 . 
- */
-function fajitas() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, fajitasClass.menuHeaderText, fajitasClass.headerTitles, fajitasClass.prices, fajitasClass.headerDescriptions, fajitasClass.dis, fajitasClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, fajitasClass.menuHeaderText, fajitasClass.headerTitles, fajitasClass.prices, fajitasClass.headerDescriptions, fajitasClass.dis, fajitasClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    advance(0, fajitasClass.menuHeaderText, fajitasClass.headerTitles, fajitasClass.prices, fajitasClass.headerDescriptions, fajitasClass.dis, fajitasClass.imageSource); 
+function showSeafood() {
+    setupMenu(seafoodClass);
 }
-function desserts(){
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, dessertsClass.menuHeaderText, dessertsClass.headerTitles, dessertsClass.prices, dessertsClass.headerDescriptions, dessertsClass.dis, dessertsClass.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, dessertsClass.menuHeaderText, dessertsClass.headerTitles, dessertsClass.prices, dessertsClass.headerDescriptions, dessertsClass.dis, dessertsClass.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    advance(0, dessertsClass.menuHeaderText, dessertsClass.headerTitles, dessertsClass.prices, dessertsClass.headerDescriptions, dessertsClass.dis, dessertsClass.imageSource); 
+function showFajitas() {
+    setupMenu(fajitasClass);
 }
-function nonAlcoholic() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, nonAlcoholics.menuHeaderText, nonAlcoholics.headerTitles, nonAlcoholics.prices, nonAlcoholics.headerDescriptions, nonAlcoholics.dis, nonAlcoholics.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, nonAlcoholics.menuHeaderText, nonAlcoholics.headerTitles, nonAlcoholics.prices, nonAlcoholics.headerDescriptions, nonAlcoholics.dis, nonAlcoholics.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    advance(0, nonAlcoholics.menuHeaderText, nonAlcoholics.headerTitles, nonAlcoholics.prices, nonAlcoholics.headerDescriptions, nonAlcoholics.dis, nonAlcoholics.imageSource);  
+function showDesserts() {
+    setupMenu(dessertsClass);
 }
-function alcoholic() {
-    var x = 1;
-
-    document.getElementById('output-area').innerHTML = x;
-
-    plusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = ++x);
-    minusButton.addEventListener('click', () => document.getElementById('output-area').innerHTML = --x);
-
-    previousButton.addEventListener('click', () => x = 1); 
-    nextButton.addEventListener('click', () => x = 1);
-
-    previousButton.addEventListener('click', () => advance(-1, alcoholics.menuHeaderText, alcoholics.headerTitles, alcoholics.prices, alcoholics.headerDescriptions, alcoholics.dis, alcoholics.imageSource));
-    previousButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    nextButton.addEventListener('click', () => advance(1, alcoholics.menuHeaderText, alcoholics.headerTitles, alcoholics.prices, alcoholics.headerDescriptions, alcoholics.dis, alcoholics.imageSource));
-    nextButton.addEventListener('click', () =>  document.getElementById('output-area').innerHTML = x);
-    advance(0, alcoholics.menuHeaderText, alcoholics.headerTitles, alcoholics.prices, alcoholics.headerDescriptions, alcoholics.dis, alcoholics.imageSource);   
+function showNonAlcoholic() {
+    setupMenu(nonAlcoholics);
 }
+function showAlcoholic() {
+    setupMenu(alcoholics);
+}
+document.querySelector('.menu-nav-bar a[href="#vegetarian"]').addEventListener('click', showVegetarian);
+document.querySelector('.menu-nav-bar a[href="#appetizers"]').addEventListener('click', showAppetizers);
+document.querySelector('.menu-nav-bar a[href="#nachos"]').addEventListener('click', showNachos);
+document.querySelector('.menu-nav-bar a[href="#salads"]').addEventListener('click', showSalads);
+document.querySelector('.menu-nav-bar a[href="#tacos"]').addEventListener('click', showTacos);
+document.querySelector('.menu-nav-bar a[href="#burrito"]').addEventListener('click', showBurrito);
+document.querySelector('.menu-nav-bar a[href="#enchiladas"]').addEventListener('click', showEnchiladas);
+document.querySelector('.menu-nav-bar a[href="#quesadillas"]').addEventListener('click', showQuesadillas);
+document.querySelector('.menu-nav-bar a[href="#seafood"]').addEventListener('click', showSeafood);
+document.querySelector('.menu-nav-bar a[href="#fajitas"]').addEventListener('click', showFajitas);
+document.querySelector('.menu-nav-bar a[href="#desserts"]').addEventListener('click', showDesserts);
+document.querySelector('.menu-nav-bar a[href="#nonAlcoholic"]').addEventListener('click', showNonAlcoholic);
+document.querySelector('.menu-nav-bar a[href="#alcoholic"]').addEventListener('click', showAlcoholic);
