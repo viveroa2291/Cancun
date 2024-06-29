@@ -14,7 +14,7 @@
     background-image: url('images/platters.jpeg');
 }
 .home-images {
-    height: 350px;
+    height: 500px;
 }
 .quantity {
     color: red;
@@ -31,15 +31,11 @@
 .phone-numbers{
     color: green;
 }
-.menu-table {
-    text-align: center;
-    margin-left: -3rem;
-}
 .menu-table .menu-list {
     display: inline-block;
 }
 .section-text {
-    width: 25%;
+    width: 50%;
 }
 .body-section {
     background-color: beige;
@@ -47,6 +43,17 @@
     border-radius: 15px;
     margin-top: -1rem;
     margin-bottom: -1rem;
+}
+.welcome-section, .menu-section, .about-section, .contact-section, .upcoming-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+}
+.welcome-section, .menu-section, .about-section, .contact-section, .upcoming-section { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
 }
 @media (max-width: 1000px) {
     .gallery-images {
