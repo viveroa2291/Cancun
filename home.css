@@ -38,6 +38,9 @@
 .menu-table .menu-list {
     display: inline-block;
 }
+.section-text {
+    width: 25%;
+}
 .body-section {
     background-color: beige;
     padding: 1rem;
