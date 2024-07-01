@@ -1,6 +1,22 @@
 .welcome-section {
     background-color: #f5f5f5;
 }
+.menu-section {
+    /* 
+    background-image: url('images/menu.jpeg');
+    background-repeat: no-repeat;
+    */
+    background-color: #d67070;
+}
+.about-section {
+    background-color: rgba(22, 241, 37, 0.69);
+}
+.contact-section {
+    background-color: #f5f5f5;
+}
+.upcoming-section {
+    background-color: #d67070;
+}
 .javascriptMenu {
     text-decoration: none;
     font-size: 16px;
@@ -54,6 +70,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
+    margin-top: -1rem;
 }
 @media (max-width: 1000px) {
     .gallery-images {
