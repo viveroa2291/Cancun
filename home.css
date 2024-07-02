@@ -9,7 +9,30 @@
     background-color: #d67070;
 }
 .about-section {
-    background-color: rgba(22, 241, 37, 0.69);
+    margin-top: -2rem;
+    height: 750px;
+    background-image: url('images/restaurant.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-description {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width: 25%;
+    border-radius: 10px;
+}
+.about-us {
+    text-align: center; 
+}
+.about-text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .contact-section {
     background-color: #f5f5f5;
@@ -51,6 +74,7 @@
     display: inline-block;
 }
 .section-text {
+    line-height: 2;
     width: 50%;
 }
 .body-section {
@@ -60,13 +84,13 @@
     margin-top: -1rem;
     margin-bottom: -1rem;
 }
-.welcome-section, .menu-section, .about-section, .contact-section, .upcoming-section {
+.welcome-section, .menu-section, .contact-section, .upcoming-section {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 750px;
 }
-.welcome-section, .menu-section, .about-section, .contact-section, .upcoming-section { 
+.welcome-section, .menu-section, .contact-section, .upcoming-section { 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
