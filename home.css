@@ -8,6 +8,17 @@
     */
     background-color: #d67070;
 }
+.menu-description, .upcoming-description {
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 75%;
+}
+.menu-text, .upcoming-text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .about-section {
     margin-top: -2rem;
     height: 750px;
@@ -88,7 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 750px;
+    height: 950px;
 }
 .welcome-section, .menu-section, .contact-section, .upcoming-section { 
     display: grid;
