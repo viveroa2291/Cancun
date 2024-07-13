@@ -21,7 +21,7 @@
 }
 .about-section {
     margin-top: -2rem;
-    height: 750px;
+    height: 100vh;
     background-image: url('images/restaurant.jpeg');
     background-size: cover;
     background-position: center;
@@ -99,7 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 950px;
+    height: 100vh;
 }
 .welcome-section, .menu-section, .contact-section, .upcoming-section { 
     display: grid;
