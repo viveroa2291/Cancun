@@ -1,10 +1,20 @@
+main {
+    background-color: rgb(2, 94, 64);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.pageTitle {
+    padding-top: 2rem;
+    color: white;
+    font-size: 4rem;
+}
 .store-information {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 .div-sections {
-    width: 50%;
+    width: 15%;
 }
 .store-location {
     display: flex;
@@ -16,9 +26,16 @@ h2 {
 }
 .location {
     margin-right: 1rem;
+    color: white;
+    font-size: 1rem;
+}
+.phone {
+    color: white;
 }
 .store-hours {
     text-align: center;
+    color: white;
+    font-size: 17px;
 }
 .fa-phone {
     transform: rotate(100deg);
@@ -44,9 +61,8 @@ h2 {
     margin-right: 5rem;
 }
 .cancun-link {
-    text-decoration: none;
     font-size: 16px;
-    color: blue;
+    color: white;
 }
 .cancun-link:hover {
     color: gray;
@@ -54,7 +70,24 @@ h2 {
 .store-hours-div {
     align-self: center;
 }
+.store-hours-div>h2 {
+    color: white;
+    font-size: 2rem;
+}
+.facebook-text {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+.social-media-text {
+    color: white;
+}
 @media (max-width: 1000px) {
+    .pageTitle {
+        padding-top: 2rem;
+        color: white;
+        font-size: 2rem;
+    }
     .store-location {
         display: flex;
         flex-direction: column;
