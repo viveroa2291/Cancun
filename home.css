@@ -82,24 +82,10 @@ header {
 .menu-description {
     text-align: center; /* Important */
 }
-.welcome-text {
-    font-size: 24px;
+.welcome-text, .menu-text, .about-text, .upcoming-text, .contact-text {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    color: white;
-}
-.menu-text, .about-text, .upcoming-text, .contact-text {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.contact-section {
-    background-color: #f5f5f5;
-}
-.upcoming-section {
-    background-image: url('home-images/menu-image.jpg');
-    background-size: cover;
 }
 .javascriptMenu {
     text-decoration: none;
@@ -109,11 +95,6 @@ header {
 }
 .javascriptMenu:hover{
     opacity: 50%;
-}
-.home-images {
-    z-index: 2;
-    height: 500px;
-    border-radius: 5px;
 }
 .maps {
     color: rgb(255, 255, 255);
@@ -131,26 +112,28 @@ header {
     padding-top: 2rem;
 }
 @media (max-width: 950px) {
-    .welcome-section, .menu-section, .contact-section, .upcoming-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .welcome-description>h2, .menu-description>h2, .about-description>h2, .contact-description>h2, .upcoming-description>h2 {
+        font-size: 40px;
     }
-    .home-images {
-        height: 200px;
-        margin-bottom: 1rem;
-    }
-    .about-description, .welcome-description, .menu-description, .contact-description, .upcoming-description {
-        font-size: 14px;
-        width: 95%;
-    }
-    .contact-description>h2 {
-        text-align: center;
-    }
-    .contact-description>.section-text {
+    .welcome-text, .welcome-description, .menu-description, .about-description, .contact-description, .upcoming-description {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        font-size: 14px;
+        width: 100%;
+    }
+    .swiper-pagination-bullet {
+        --swiper-pagination-bullet-size: 10px;
+        --swiper-pagination-bullet-width: 10px;
+        --swiper-pagination-bullet-height: 10px;
+        --swiper-pagination-bullet-opacity: 1;
+        --swiper-pagination-bullet-horizontal-gap: 8px;
+    }
+    .large-template-logo {
+        position: absolute;
+        top: 30%;
+        left: -35%;  
+        height: 400px;
     }
     .javascriptMenu{
         font-size: 14px;
